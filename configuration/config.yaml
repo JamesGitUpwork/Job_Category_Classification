@@ -1,0 +1,10 @@
+ci_config:
+  ci_api: ZaRMzpu627tFSmVFxkb9C3m8iJBswJ5gd2Ljf81LwLrBvjmtDdRzvyLwxCrRcnin
+  ci_host: https://api.winad-hq.com
+
+local_db:
+  username: postgres
+  password: test_passord_^1234
+  host: localhost
+  port: 5432
+  database: winthrop_db

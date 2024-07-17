@@ -1,0 +1,3 @@
+class PredictionJobCategory:
+
+    pass
