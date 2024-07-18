@@ -1,3 +1,8 @@
+from sqlalchemy import text
+import pandas as pd
+import joblib
+
 class ClassifyText:
 
-    pass
+    def __init_():
+        pass

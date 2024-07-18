@@ -14,7 +14,7 @@ def get_job_category(engine,schema,get_job_post_query):
     ExtractText_obj = ExtractText(schema)
     extractText_df = ExtractText_obj.getText(engine,get_job_post_query)
     print(extractText_df.head())
-    ExtractText_obj.insertText(engine)
+    # ExtractText_obj.insertText(engine) -- must uncomment
 
     #ClassifyText_obj = ClassifyText()
     #CreatJobDescription_obj = CreatJobDescription()
