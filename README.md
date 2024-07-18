@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Receive incoming non-fauclty job posts from central jobs and output predicted job categories
+Receive incoming non-faculty job posts from central jobs and output predicted job categories
 
 ## Usage
 
