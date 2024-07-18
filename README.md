@@ -1,3 +1,11 @@
-**Job Category Classification**
+# Non-Faculty Job Category Classification 
 
-*Work in Progress*
+## Purpose
+
+Receive incoming non-fauclty job posts from central jobs and output predicted job categories
+
+## Usage
+
+WIP
+
+
