@@ -20,7 +20,7 @@ class ExtractText:
         
         return output_ls
 
-    def getText(self,engine,query):
+    def extractText(self,engine,query):
         # Extract job id, title, and description
         with engine.connect() as con:
             text_query = text(query)
@@ -31,7 +31,7 @@ class ExtractText:
         job_posts_info = pd.DataFrame(rows,columns=['job_id','description_md'])
 
         output_ls = []
-        flag = 0
+        flag = 0 # Having a flag maybe uncessary
         for index, job_post in job_posts_info.iterrows():
             if flag % 100 == 0:
                 print(flag)
@@ -44,7 +44,12 @@ class ExtractText:
         self.extract_text_df = text_df[['job_id','text']]
         self.extract_text_df.set_axis(['job_id','extract_text'],axis=1,inplace=True)
         
-        return self.extract_text_df
+    def getText(self,engine):
+            temp = '''
+            select * from {}.extract_text_tb where job_id 
+            '''
+            # Continue work here
+            # Need to find a way to store and get the lastest job post to process
     
     def insertText(self,engine):
         self.extract_text_df.to_sql('extract_text_tb',

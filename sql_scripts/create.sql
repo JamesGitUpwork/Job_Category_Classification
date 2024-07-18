@@ -9,6 +9,18 @@ create table test_sch.job_post_tb (
     datetime timestamp default current_timestamp
 );
 
+create table test_sch.extract_text_prediction_tb (
+    id serial primary key,
+    text_id int references local.extract_text_tb(text_id),
+    job_id integer,
+    extract_text text,
+    prediction integer,
+    probability float,
+    text_model varchar,
+    run_predict_text_id int,
+    datetime timestamp default current_timestamp
+);
+
 create table test_sch.extract_text_tb (
     text_id serial primary key,
     job_id integer not null,
@@ -16,3 +28,23 @@ create table test_sch.extract_text_tb (
     datetime timestamp default current_timestamp  
 );
 
+create table test_sch.text_classification_model_tb (
+    version int,
+    name varchar
+);
+
+create table test_sch.job_classification_model_tb (
+    category varchar,
+    version int,
+    name varchar
+);
+
+create table test_sch.vectorization_model_tb (
+    category varchar,
+    version int,
+    name varchar
+);
+
+create table test_sch.run_predict_text_id_tb (
+    run_predict_text_id int unique
+);
