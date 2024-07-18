@@ -3,8 +3,9 @@ import pandas as pd
 
 class ExtractText:
 
-    def __init__(self):
-        pass
+    def __init__(self,schema):
+        self.schema = schema
+        self.extract_text_df = None
 
     def __extract_description(self,job_post,output_ls):
         job_id = job_post['job_id']
@@ -14,12 +15,12 @@ class ExtractText:
         threshold_length = 50
         for i, line in enumerate(text_ls):
             if len(line) > threshold_length:
-                output = [job_id,job_post['title'],line]
+                output = [job_id,line]
                 output_ls.append(output)
         
         return output_ls
 
-    def extractText(self,engine,schema,query):
+    def getText(self,engine,query):
         # Extract job id, title, and description
         with engine.connect() as con:
             text_query = text(query)
@@ -27,7 +28,7 @@ class ExtractText:
 
             rows = rs.fetchall()
 
-        job_posts_info = pd.DataFrame(rows,columns=['job_id','title','description_md'])
+        job_posts_info = pd.DataFrame(rows,columns=['job_id','description_md'])
 
         output_ls = []
         flag = 0
@@ -37,12 +38,17 @@ class ExtractText:
             flag = flag + 1
             output_ls = self.__extract_description(job_post,output_ls)
 
-        columns = ['job_id','title','text']
+        columns = ['job_id','text']
         text_df = pd.DataFrame(output_ls,columns=columns)
 
-        extract_text_df = text_df[['job_id','text']]
-        extract_text_df.set_axis(['job_id','extract_text'],axis=1,inplace=True)
-        extract_text_df.to_sql('extract_text_tb',engine,schema=schema,if_exists='append',index=False)
-        print(extract_text_df.head())
+        self.extract_text_df = text_df[['job_id','text']]
+        self.extract_text_df.set_axis(['job_id','extract_text'],axis=1,inplace=True)
         
-        return extract_text_df['job_id'].nunique()
+        return self.extract_text_df
+    
+    def insertText(self,engine):
+        self.extract_text_df.to_sql('extract_text_tb',
+                                    engine,
+                                    schema=self.schema,
+                                    if_exists='append',
+                                    index=False)
