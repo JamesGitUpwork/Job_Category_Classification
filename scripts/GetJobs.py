@@ -7,9 +7,9 @@ class GetJobs:
     def __init__(self,schema):
         self.schema = schema
         self.latest_job_post_df = None
-
+     
+    # Need ability to retrieve job posts from CI and store in latest_job_post_tb
     def fetchLatestJobs(self,engine):
-        # Need ability to retrieve job posts from CI and store in latest_job_post_tb
         temp = '''
         select distinct on (job_id) * from {}.latest_job_post_tb
         '''

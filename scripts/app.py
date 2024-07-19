@@ -23,7 +23,7 @@ def predict_job_category(engine,schema,get_job_post_query,text_class_model,text_
     ExtractText_obj = ExtractText(schema)
     ExtractText_obj.extractText(engine,get_job_post_query)
     # ExtractText_obj.insertText(engine) -- must uncomment
-    extract_text_df = ExtractText_obj.getText()
+    extract_text_df = ExtractText_obj.getText(engine)
 
     # Step 2: 
     ClassifyText_obj = ClassifyText(schema)
@@ -70,12 +70,11 @@ def run():
     schema = "test_sch"
 
     # Fetch Job Post
-    getJobPost(engine,schema)
+    # getJobPost(engine,schema)
 
     # Get Job Post to categorize query
     temp = '''
-        select distinct job_id, description_md from {}.job_post_tb
-        where date(created_at) = '2024-01-01'
+        select distinct on (job_id) job_id, description_md from {}.latest_job_post_tb
     '''
     get_job_post_query = temp.format(schema)
 

@@ -46,10 +46,19 @@ class ExtractText:
         
     def getText(self,engine):
             temp = '''
-            select * from {}.extract_text_tb where job_id 
+            select text_id, job_id, extract_text from {}.extract_text_tb where job_id in (
+            select distinct(job_id) from {}.latest_job_post_tb)
             '''
-            # Continue work here
-            # Need to find a way to store and get the lastest job post to process
+            query = temp.format(self.schema,self.schema)
+            
+            with engine.connect() as con:
+                text_query = text(query)
+                rs = con.execute(text_query)
+                rows = rs.fetchall()      
+
+            columns = ['text_id','job_id','extract_text']
+            self.extract_text_df = pd.DataFrame(rows,columns=columns)
+            return self.extract_text_df
     
     def insertText(self,engine):
         self.extract_text_df.to_sql('extract_text_tb',
