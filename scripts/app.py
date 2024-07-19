@@ -3,7 +3,7 @@ from SqlConn import SqlConn
 from GetJobs import GetJobs
 from ExtractText import ExtractText
 from ClassifyText import ClassifyText
-#from CreateJobDescription import CreatJobDescription
+from CreateJobDescription import CreateJobDescription
 #from PredictJobCategory import PredictionJobCategory
 from sqlalchemy import text
 
@@ -17,7 +17,9 @@ def getJobPost(engine,schema):
     GetJobs_obj.fetchLatestJobs(engine)
     GetJobs_obj.insertLatestJobs(engine)
 
-def predict_job_category(engine,schema,get_job_post_query,text_class_model,text_treshold=0.3):
+def predict_job_category(engine,schema,get_job_post_query,
+                         text_class_model,text_threshold=0.3,
+                         description_threshold=0.8):
 
     # Step 1: Extract text from description
     ExtractText_obj = ExtractText(schema)
@@ -25,13 +27,17 @@ def predict_job_category(engine,schema,get_job_post_query,text_class_model,text_
     # ExtractText_obj.insertText(engine) -- must uncomment
     extract_text_df = ExtractText_obj.getText(engine)
 
-    # Step 2: 
+    # Step 2: Classify Text
     ClassifyText_obj = ClassifyText(schema)
-    ClassifyText_obj.classifyText(extract_text_df,text_class_model,engine,text_treshold)
+    ClassifyText_obj.classifyText(extract_text_df,text_class_model,engine,text_threshold)
     ClassifyText_obj.insertTextPrediction(engine)
     ##classify_prediction_df = ClassifyText_obj.getTextPrediction()
     
-    #CreatJobDescription_obj = CreatJobDescription()
+    # Step 2: Create Job Desscription
+    CreateJobDescription_obj = CreateJobDescription(schema)
+    CreateJobDescription_obj.createJobDescription(engine,description_threshold)
+    CreateJobDescription_obj.insertJobDescription(engine)
+
     #PredictionJobCategory_obj = PredictionJobCategory()
 
 # Get name of text classification model
@@ -88,7 +94,7 @@ def run():
                          schema,
                          get_job_post_query,
                          extract_text_model,
-                         text_treshold=text_class_threshold)
+                         text_threshold=text_class_threshold)
 
 if __name__ == "__main__":
     run()

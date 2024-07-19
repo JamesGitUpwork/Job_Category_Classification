@@ -5,10 +5,15 @@ import numpy as np
 
 class CreateJobDescription:
 
+    def __init__(self,schema):
+        self.schema = schema
+        self.job_description_df = None
+    
     def getMaxClassifyTextRunId(self,engine):
-        model_query = '''
-        select max(run_predict_text_id) from local.run_predict_text_id_tb
+        temp = '''
+        select max(run_predict_text_id) from {}.run_predict_text_id_tb
         '''
+        model_query = temp.format(self.schema)
         with engine.connect() as con:
             query = text(model_query)
             rs = con.execute(query)
@@ -17,9 +22,10 @@ class CreateJobDescription:
         return str(maxRunId)
 
     def __setRunId(self,engine):
-        model_query = '''
-        select distinct(run_create_description_id) from local.run_create_description_id_tb
+        temp = '''
+        select distinct(run_create_description_id) from {}.run_create_description_id_tb
         '''
+        model_query = temp.format(self.schema)
         # Extract job id, title, and description
         with engine.connect() as con:
             query = text(model_query)
@@ -37,16 +43,16 @@ class CreateJobDescription:
             new_id = max_id + 1
 
         df = pd.DataFrame({'run_create_description_id':[new_id]})
-        df.to_sql('run_create_description_id_tb',engine,schema='local',if_exists='append',index=False)
+        df.to_sql('run_create_description_id_tb',engine,schema=self.schema,if_exists='append',index=False)
 
         return new_id
 
-    def getJobDescription(self,engine,probability_threshold):
+    def createJobDescription(self,engine,probability_threshold):
         temp = '''
-        select job_id, extract_text, probability, text_model from local.extract_text_prediction_tb where run_predict_text_id = {}
+        select job_id, extract_text, probability, text_model from {}.extract_text_prediction_tb where run_predict_text_id = {}
         '''
         maxRunId = self.getMaxClassifyTextRunId(engine)
-        text_description_query = temp.format(maxRunId)
+        text_description_query = temp.format(self.schema,maxRunId)
 
         # Extract job id, title, and description
         with engine.connect() as con:
@@ -56,10 +62,6 @@ class CreateJobDescription:
             rows = rs.fetchall()
 
         predicted_job_description_df = pd.DataFrame(rows,columns=['job_id','extract_text','probability','text_model'])
-
-        job_title_query = '''
-        select distinct(job_id), title from local.job_post_tb
-        '''
 
         # Sort within each group
         temp = predicted_job_description_df.groupby('job_id').apply(
@@ -75,12 +77,11 @@ class CreateJobDescription:
         grouped_testing_data['text_run_id'] = int(maxRunId)
         grouped_testing_data['run_create_description_id'] = run_create_description_id
 
+        self.job_description_df = grouped_testing_data
+
         print(grouped_testing_data.head())
 
-        grouped_testing_data.to_sql('job_description_tb',engine,schema='local',if_exists='append',index=False)
-
-        print('Completed group description script with run_create_description_id: {run_create_description_id}')
-
-
+    def insertJobDescription(self,engine):
+        self.job_description_df.to_sql('job_description_tb',engine,schema=self.schema,if_exists='append',index=False)
 
 

@@ -60,3 +60,15 @@ create table test_sch.latest_job_post_tb (
     datetime timestamp default current_timestamp
 );
 
+create table test_sch.job_description_tb (
+    description_id serial primary key,
+    job_id integer,
+    description text,
+    text_run_id integer,
+    run_create_description_id int,
+    datetime timestamp default current_timestamp
+);
+
+create table test_sch.run_create_description_id_tb (
+    run_create_description_id int unique
+);
