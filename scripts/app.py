@@ -28,8 +28,9 @@ def predict_job_category(engine,schema,get_job_post_query,text_class_model,text_
     # Step 2: 
     ClassifyText_obj = ClassifyText(schema)
     ClassifyText_obj.classifyText(extract_text_df,text_class_model,engine,text_treshold)
-    classify_prediction_df = ClassifyText_obj.getTextPrediction()
-    print(classify_prediction_df.head())
+    ClassifyText_obj.insertTextPrediction(engine)
+    ##classify_prediction_df = ClassifyText_obj.getTextPrediction()
+    
     #CreatJobDescription_obj = CreatJobDescription()
     #PredictionJobCategory_obj = PredictionJobCategory()
 

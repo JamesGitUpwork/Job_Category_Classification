@@ -36,7 +36,7 @@ class ClassifyText:
             new_id = max_id + 1
 
         df = pd.DataFrame({'run_predict_text_id':[new_id]})
-        #df.to_sql('run_predict_text_id_tb',engine,schema=self.schema,if_exists='append',index=False)
+        df.to_sql('run_predict_text_id_tb',engine,schema=self.schema,if_exists='append',index=False)
 
         return new_id
 

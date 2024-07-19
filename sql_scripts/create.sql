@@ -11,7 +11,7 @@ create table test_sch.job_post_tb (
 
 create table test_sch.extract_text_prediction_tb (
     id serial primary key,
-    text_id int references local.extract_text_tb(text_id),
+    text_id int references test_sch.extract_text_tb(text_id),
     job_id integer,
     extract_text text,
     prediction integer,
@@ -59,3 +59,4 @@ create table test_sch.latest_job_post_tb (
     created_at timestamp,
     datetime timestamp default current_timestamp
 );
+
