@@ -48,3 +48,14 @@ create table test_sch.vectorization_model_tb (
 create table test_sch.run_predict_text_id_tb (
     run_predict_text_id int unique
 );
+
+create table test_sch.latest_job_post_tb (
+    job_id int not null,
+    title varchar,
+    link varchar,
+    salary_summary varchar,
+    school_id int not null,
+    description_md text,
+    created_at timestamp,
+    datetime timestamp default current_timestamp
+);

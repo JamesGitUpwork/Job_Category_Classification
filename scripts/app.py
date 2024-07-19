@@ -1,15 +1,21 @@
 import yaml
 from SqlConn import SqlConn
+from GetJobs import GetJobs
 from ExtractText import ExtractText
 from ClassifyText import ClassifyText
-from CreateJobDescription import CreatJobDescription
-from PredictJobCategory import PredictionJobCategory
+#from CreateJobDescription import CreatJobDescription
+#from PredictJobCategory import PredictionJobCategory
 from sqlalchemy import text
 
 def load_config(file_path):
     with open(file_path,'r') as f:
         config = yaml.safe_load(f)
     return config
+
+def getJobPost(engine,schema):
+    GetJobs_obj = GetJobs(schema)
+    GetJobs_obj.fetchLatestJobs(engine)
+    GetJobs_obj.insertLatestJobs(engine)
 
 def predict_job_category(engine,schema,get_job_post_query,text_class_model,text_treshold=0.3):
 
@@ -63,7 +69,10 @@ def run():
     engine = sqlconn_obj.connect()
     schema = "test_sch"
 
-    # Job Post to categorize query
+    # Fetch Job Post
+    getJobPost(engine,schema)
+
+    # Get Job Post to categorize query
     temp = '''
         select distinct job_id, description_md from {}.job_post_tb
         where date(created_at) = '2024-01-01'
