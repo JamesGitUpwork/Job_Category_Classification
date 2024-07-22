@@ -84,30 +84,7 @@ class PredictJobCategory:
 
         return model_name_df
 
-    def classifyJobDescription(self,engine,category_threshold=0.3,cat_ver=0,vec_ver=0):
-        
-        temp = '''
-        select 
-        des.description_id,
-        des.job_id,
-        concat(job.title,'. ',des.description) as description
-        from {}.job_description_tb as des
-        left join {}.job_post_tb as job
-        on des.job_id = job.job_id
-        where des.run_create_description_id = {}
-        '''
-        maxRunId = self.getMaxDescriptionRunId(engine)
-        description_query = temp.format(self.schema,self.schema,maxRunId)
-
-        # Extract job id, title, and description
-        with engine.connect() as con:
-            query = text(description_query)
-            rs = con.execute(query)
-
-            rows = rs.fetchall()
-
-        job_description_df = pd.DataFrame(rows,columns=['description_id','job_id','description'])
-
+    def classifyJobDescription(self,engine,job_description_df,category_threshold=0.3,cat_ver=0,vec_ver=0):
         # Get model names
         model_name_df = self.__getModels(engine,cat_version=cat_ver,vec_version=vec_ver)
 

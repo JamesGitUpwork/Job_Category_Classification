@@ -47,39 +47,22 @@ class CreateJobDescription:
 
         return new_id
 
-    def createJobDescription(self,engine,probability_threshold):
-        temp = '''
-        select job_id, extract_text, probability, text_model from {}.extract_text_prediction_tb where run_predict_text_id = {}
-        '''
-        maxRunId = self.getMaxClassifyTextRunId(engine)
-        text_description_query = temp.format(self.schema,maxRunId)
+    def createJobDescription(self,engine,text_extract_df):
 
-        # Extract job id, title, and description
-        with engine.connect() as con:
-            query = text(text_description_query)
-            rs = con.execute(query)
+        df = text_extract_df[text_extract_df['prediction']==1]
+        grouped_df = df.groupby('job_id').apply(
+            lambda x: f"{x['title'].iloc[0]}. " + " ".join(x['extract_text'])
+        ).reset_index(name='description')
 
-            rows = rs.fetchall()
-
-        predicted_job_description_df = pd.DataFrame(rows,columns=['job_id','extract_text','probability','text_model'])
-
-        # Sort within each group
-        temp = predicted_job_description_df.groupby('job_id').apply(
-            lambda x: x.sort_values(by='probability',ascending=False)).reset_index(drop=True)
-
-        sorted_testing_data = temp[temp['probability'] >= probability_threshold]
-
-        grouped_testing_data = sorted_testing_data.groupby('job_id').agg(
-            {'extract_text': lambda x: ' '.join(x)}).reset_index()
-        
+        maxRunId = self.getMaxClassifyTextRunId(engine)        
         run_create_description_id = self.__setRunId(engine)
-        grouped_testing_data.set_axis(['job_id','description'],axis=1,inplace=True)
-        grouped_testing_data['text_run_id'] = int(maxRunId)
-        grouped_testing_data['run_create_description_id'] = run_create_description_id
+        grouped_df['text_run_id'] = int(maxRunId)
+        grouped_df['run_create_description_id'] = run_create_description_id
 
-        self.job_description_df = grouped_testing_data
+        self.job_description_df = grouped_df
 
-        print(grouped_testing_data.head())
+    def getJobDescription(self):
+        return self.job_description_df
 
     def insertJobDescription(self,engine):
         self.job_description_df.to_sql('job_description_tb',engine,schema=self.schema,if_exists='append',index=False)

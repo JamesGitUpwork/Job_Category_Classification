@@ -9,13 +9,14 @@ class ExtractText:
 
     def __extract_description(self,job_post,output_ls):
         job_id = job_post['job_id']
+        title = job_post['title']
         text = job_post['description_md']
         text_ls = text.split('\n\n')
         text_ls = [s for s in text_ls if s.strip()]
         threshold_length = 50
         for i, line in enumerate(text_ls):
             if len(line) > threshold_length:
-                output = [job_id,line]
+                output = [job_id,title,line]
                 output_ls.append(output)
         
         return output_ls
@@ -28,7 +29,7 @@ class ExtractText:
 
             rows = rs.fetchall()
 
-        job_posts_info = pd.DataFrame(rows,columns=['job_id','description_md'])
+        job_posts_info = pd.DataFrame(rows,columns=['job_id','title','description_md'])
 
         output_ls = []
         flag = 0 # Having a flag maybe uncessary
@@ -38,27 +39,25 @@ class ExtractText:
             flag = flag + 1
             output_ls = self.__extract_description(job_post,output_ls)
 
-        columns = ['job_id','text']
+        columns = ['job_id','title','text']
         text_df = pd.DataFrame(output_ls,columns=columns)
 
-        self.extract_text_df = text_df[['job_id','text']]
-        self.extract_text_df.set_axis(['job_id','extract_text'],axis=1,inplace=True)
+        self.extract_text_df = text_df[['job_id','title','text']]
+        self.extract_text_df.set_axis(['job_id','title','extract_text'],axis=1,inplace=True)
         
     def getText(self,engine):
-            temp = '''
-            select text_id, job_id, extract_text from {}.extract_text_tb where job_id in (
-            select distinct(job_id) from {}.latest_job_post_tb)
-            '''
-            query = temp.format(self.schema,self.schema)
-            
-            with engine.connect() as con:
-                text_query = text(query)
-                rs = con.execute(text_query)
-                rows = rs.fetchall()      
+        temp = '''
+        select text_id, job_id, title, extract_text from {schema}.extract_text_tb 
+        where job_id in (select distinct(job_id) from {schema}.latest_job_post_tb)
+        ''' 
+        query = temp.format(schema=self.schema)
+        with engine.connect() as con:
+            text_query = text(query)
+            rs = con.execute(text_query)
+            rows = rs.fetchall()
 
-            columns = ['text_id','job_id','extract_text']
-            self.extract_text_df = pd.DataFrame(rows,columns=columns)
-            return self.extract_text_df
+        df = pd.DataFrame(rows,columns=['text_id','job_id','title','extract_text'])
+        return df
     
     def insertText(self,engine):
         self.extract_text_df.to_sql('extract_text_tb',

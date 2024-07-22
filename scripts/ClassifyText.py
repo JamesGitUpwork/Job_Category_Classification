@@ -40,7 +40,7 @@ class ClassifyText:
 
         return new_id
 
-    def classifyText(self,text_extract_df,model,engine,threshold=0.3):
+    def classifyText(self,text_extract_df,model,engine,threshold=0.8):
         temp = './text_classification_model/{}.pkl'
         job_description_extract_file = temp.format(model)
 
@@ -51,18 +51,29 @@ class ClassifyText:
         for index, value in text_extract_df.iterrows():
             y_pred_prob = job_description_model.predict_proba([value['extract_text']])[:,1]
             y_pred = self.__recall_bias_predict(y_pred_prob,threshold)
-            predicted_job_description.append([value['text_id'],value['job_id'],
+            predicted_job_description.append([value['text_id'],value['job_id'],value['title'],
                                             value['extract_text'],y_pred,y_pred_prob])
         
-        columns = ['text_id','job_id','extract_text','prediction','probability']
+        columns = ['text_id','job_id','title','extract_text','prediction','probability']
         self.predicted_text_description_df = pd.DataFrame(predicted_job_description,columns=columns)
         self.predicted_text_description_df['prediction'] = self.predicted_text_description_df['prediction'].astype(int)
         self.predicted_text_description_df['probability'] = round(self.predicted_text_description_df['probability'].astype(float),2)
         self.predicted_text_description_df['text_model'] = model
         self.predicted_text_description_df['run_predict_text_id'] = self.__setRunId(engine)
 
-    def getTextPrediction(self):
-        return self.predicted_text_description_df
+    def getTextPrediction(self,engine):
+        temp = '''
+        select description_id, job_id, description from {schema}.job_description_tb 
+        where job_id in (select distinct(job_id) from {schema}.latest_job_post_tb)
+        ''' 
+        query = temp.format(schema=self.schema)
+        with engine.connect() as con:
+            text_query = text(query)
+            rs = con.execute(text_query)
+            rows = rs.fetchall()
+
+        df = pd.DataFrame(rows,columns=['description_id','job_id','description'])
+        return df
     
     def insertTextPrediction(self,engine):
         self.predicted_text_description_df.to_sql('extract_text_prediction_tb',engine,schema=self.schema,if_exists='append',index=False)

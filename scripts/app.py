@@ -4,7 +4,7 @@ from GetJobs import GetJobs
 from ExtractText import ExtractText
 from ClassifyText import ClassifyText
 from CreateJobDescription import CreateJobDescription
-from PredictJobCategory import PredictionJobCategory
+from PredictJobCategory import PredictJobCategory
 from sqlalchemy import text
 
 def load_config(file_path):
@@ -19,32 +19,33 @@ def getJobPost(engine,schema):
 
 def predict_job_category(engine,schema,get_job_post_query,text_class_model,
                          text_threshold=0.3,
-                         description_threshold=0.8,
                          category_threshold = 0.3
                          ):
 
     # Step 1: Extract text from description
     ExtractText_obj = ExtractText(schema)
     ExtractText_obj.extractText(engine,get_job_post_query)
-    # ExtractText_obj.insertText(engine) -- must uncomment
+    # ExtractText_obj.insertText(engine)
     extract_text_df = ExtractText_obj.getText(engine)
 
     # Step 2: Classify Text
     ClassifyText_obj = ClassifyText(schema)
     ClassifyText_obj.classifyText(extract_text_df,text_class_model,engine,text_threshold)
     # ClassifyText_obj.insertTextPrediction(engine)
+    classified_text_df = ClassifyText_obj.getTextPrediction()
     
     # Step 2: Create Job Desscription
     CreateJobDescription_obj = CreateJobDescription(schema)
-    CreateJobDescription_obj.createJobDescription(engine,description_threshold)
+    CreateJobDescription_obj.createJobDescription(engine,classified_text_df)
     #CreateJobDescription_obj.insertJobDescription(engine)
+    job_description_df = CreateJobDescription_obj.getJobDescription(engine)
 
     # Step 3: Predict Job Category
-    PredictionJobCategory_obj = PredictionJobCategory(schema)
-    PredictionJobCategory_obj.classifyJobDescription(engine,category_threshold)
-    df = PredictionJobCategory_obj.getJobCategoryDescription()
+    PredictionJobCategory_obj = PredictJobCategory(schema)
+    PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
     #PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
-    df.head()
+    job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription()
+    job_prediction_df.head()
 
 # Get name of text classification model
 def getTextClassModel(engine,schema,version=0):
@@ -87,7 +88,7 @@ def run():
 
     # Get Job Post to categorize query
     temp = '''
-        select distinct on (job_id) job_id, description_md from {}.latest_job_post_tb
+        select distinct on (job_id) job_id, title, description_md from {}.latest_job_post_tb
     '''
     get_job_post_query = temp.format(schema)
 

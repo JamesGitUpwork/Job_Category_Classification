@@ -13,6 +13,7 @@ create table test_sch.extract_text_prediction_tb (
     id serial primary key,
     text_id int references test_sch.extract_text_tb(text_id),
     job_id integer,
+    title varchar,
     extract_text text,
     prediction integer,
     probability float,
@@ -24,6 +25,7 @@ create table test_sch.extract_text_prediction_tb (
 create table test_sch.extract_text_tb (
     text_id serial primary key,
     job_id integer not null,
+    title varchar,
     extract_text text,
     datetime timestamp default current_timestamp  
 );
