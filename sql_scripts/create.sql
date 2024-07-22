@@ -72,3 +72,19 @@ create table test_sch.job_description_tb (
 create table test_sch.run_create_description_id_tb (
     run_create_description_id int unique
 );
+
+create table test_sch.run_predict_job_id_tb (
+    run_predict_job_id int unique
+);
+
+create table test_sch.job_category_prediction_tb (
+    predict_id serial primary key,
+    job_id integer,
+    description_id int references local.job_description_tb(description_id),
+    prediction integer,
+    category varchar,
+    probability float,
+    description_run_id integer,
+    run_predict_job_id int,
+    datetime timestamp default current_timestamp
+);

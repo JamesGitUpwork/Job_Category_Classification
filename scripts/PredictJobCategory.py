@@ -8,10 +8,17 @@ import joblib
 
 class PredictJobCategory:
 
+    def __init__(self,schema):
+        self.schema = schema
+        column_names = ['job_id','description_id','prediction','category','probability','description_run_id','run_predict_job_id']
+        self.job_cat_prediction_df = pd.DataFrame(columns=column_names)
+
     def getMaxDescriptionRunId(self,engine):
-        model_query = '''
-        select max(run_create_description_id) from local.run_create_description_id_tb
+        temp = '''
+        select max(run_create_description_id) from {}.run_create_description_id_tb
         '''
+        model_query = temp.format(self.schema)
+
         with engine.connect() as con:
             query = text(model_query)
             rs = con.execute(query)
@@ -20,9 +27,10 @@ class PredictJobCategory:
         return str(maxRunId)
 
     def __setRunId(self,engine):
-        model_query = '''
-        select distinct(run_predict_job_id) from local.run_predict_job_id_tb
+        temp = '''
+        select distinct(run_predict_job_id) from {}.run_predict_job_id_tb
         '''
+        model_query = temp.format(self.schema)
         # Extract job id, title, and description
         with engine.connect() as con:
             query = text(model_query)
@@ -40,23 +48,56 @@ class PredictJobCategory:
             new_id = max_id + 1
 
         df = pd.DataFrame({'run_predict_job_id':[new_id]})
-        df.to_sql('run_predict_job_id_tb',engine,schema='local',if_exists='append',index=False)
+        df.to_sql('run_predict_job_id_tb',engine,schema=self.schema,if_exists='append',index=False)
 
         return new_id
     
-    def predictCategorization(self,engine):
+    def __getModels(self,engine,cat_version=0,vec_version=0):
+        if cat_version and vec_version == 0:
+            temp = '''
+            select vec_tb.name as vec_name, cat_tb.name as cat_name, vec_tb.category as category
+            from {schema}.vectorization_model_tb as vec_tb
+            inner join {schema}.job_classification_model_tb as cat_tb
+            on vec_tb.category = cat_tb.category
+            where vec_tb.version = (select max(version) from {schema}.vectorization_model_tb)
+            and cat_tb.version = (select max(version) from {schema}.job_classification_model_tb)
+            '''
+            model_query = temp.format(schema = self.schema)
+        else:
+            temp = '''
+            select vec_tb.name as vec_name, cat_tb.name as cat_name, vec_tb.category as category
+            from {schema}.vectorization_model_tb as vec_tb
+            inner join {schema}.job_classification_model_tb as cat_tb
+            on vec_tb.category = cat_tb.category
+            where vec_tb.version = {vec}
+            and cat_tb.version = {cat}
+            '''
+            model_query = temp.format(schema = self.schema,vec = vec_version,cat = cat_version)
+
+        with engine.connect() as con:
+            query = text(model_query)
+            rs = con.execute(query)
+
+            rows = rs.fetchall()
+        
+        model_name_df = pd.DataFrame(rows,columns=['vec_name','cat_name','category'])
+
+        return model_name_df
+
+    def classifyJobDescription(self,engine,category_threshold=0.3,cat_ver=0,vec_ver=0):
+        
         temp = '''
         select 
         des.description_id,
         des.job_id,
         concat(job.title,'. ',des.description) as description
-        from local.job_description_tb as des
-        left join local.job_post_tb as job
+        from {}.job_description_tb as des
+        left join {}.job_post_tb as job
         on des.job_id = job.job_id
         where des.run_create_description_id = {}
         '''
         maxRunId = self.getMaxDescriptionRunId(engine)
-        description_query = temp.format(maxRunId)
+        description_query = temp.format(self.schema,self.schema,maxRunId)
 
         # Extract job id, title, and description
         with engine.connect() as con:
@@ -67,31 +108,40 @@ class PredictJobCategory:
 
         job_description_df = pd.DataFrame(rows,columns=['description_id','job_id','description'])
 
-        to_predict_categories = [
-            'Laboratory and Research',
-            'Health and Medical Services'
-        ]
+        # Get model names
+        model_name_df = self.__getModels(engine,cat_version=cat_ver,vec_version=vec_ver)
 
         column_name = ['job_id','description_id','prediction','category','probability']
         prediction_df = pd.DataFrame(columns=column_name)
 
-        for category in to_predict_categories:
-            temp = 'C:/Users/yimin/upwork/winthrop/job_classification_analysis/Job_Posting_Classification/models/{}_classification_model_v2.pkl'
-            modelFile = temp.format(category)
+        for index, row in model_name_df.iterrows():
+            
+            # Get category name
+            category = row['category']
 
-            temp = 'C:/Users/yimin/upwork/winthrop/job_classification_analysis/Job_Posting_Classification/models/{}_classification_vec_v2.pkl'
-            vecFile = temp.format(category)
+            # Create job classification model file name
+            cat_name = row['cat_name']
+            temp = '/job_classification_model/{}.pkl'
+            modelFile = temp.format(cat_name)
 
+            # Create vectorization model file name
+            vec_name = row['vec_name']
+            temp = './vectorization_model/{}.pkl'
+            vecFile = temp.format(vec_name)
+
+            # Load models
             count_vectorizer = joblib.load(vecFile)
             model = joblib.load(modelFile)
 
+            # Vectorization
             test_count = count_vectorizer.transform(job_description_df['description'])
-            #predictions = model.predict(test_count)
 
-            # Decision Threshold Control
-            threshold = 0.3
+            # Predict job category
+            predictions = model.predict(test_count)
+
+            # Adjust prediction based on threshold
             y_pred_prob = model.predict_proba(test_count)
-            predictions = (y_pred_prob[:,1]>threshold).astype(int)
+            predictions = (y_pred_prob[:,1]>category_threshold).astype(int)
             probability = y_pred_prob[:,1]
 
             num_rows = len(predictions)
@@ -109,15 +159,15 @@ class PredictJobCategory:
             prediction_df = pd.concat([prediction_df,temp_df],axis=0)
 
             prediction_run_id = self.__setRunId(engine)
-            prediction_model = 'category_prediction_v1.0'
-            prediction_df['category_model'] = prediction_model
+
             prediction_df['description_run_id'] = maxRunId
             prediction_df['run_predict_job_id'] = prediction_run_id
 
-        print(prediction_df.head())
+            self.job_cat_prediction_df = pd.concat([self.job_cat_prediction_df,prediction_df],ignore_index=True)
 
-        schema = 'local'
+    def getJobCategoryDescription(self):
+        return self.job_cat_prediction_df
 
-        prediction_df.to_sql('job_category_prediction_tb',engine,schema=schema,if_exists='append',index=False)
-
-        print(f"Completed Job Category Prediction. The run_predict_job_id: {prediction_run_id}")
+    def insertJobCategoryPrediction(self,engine):
+        self.job_cat_prediction_df.to_sql('job_category_prediction_tb',
+                                          engine,schema=self.schema,if_exists='append',index=False)
