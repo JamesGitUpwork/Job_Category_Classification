@@ -137,7 +137,7 @@ class PredictJobCategory:
 
             prediction_run_id = self.__setRunId(engine)
 
-            prediction_df['description_run_id'] = maxRunId
+            #prediction_df['description_run_id'] = maxRunId
             prediction_df['run_predict_job_id'] = prediction_run_id
 
             self.job_cat_prediction_df = pd.concat([self.job_cat_prediction_df,prediction_df],ignore_index=True)
