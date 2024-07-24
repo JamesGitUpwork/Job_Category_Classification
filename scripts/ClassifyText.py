@@ -4,8 +4,7 @@ import joblib
 
 class ClassifyText:
 
-    def __init__(self,schema):
-        self.schema = schema
+    def __init__(self):
         self.predicted_text_description_df = None
 
     # Choose decision threshold

@@ -1,5 +1,7 @@
 create table fact_sch.job_run_id_tb (
     job_run_id serial primary key,
+    text_classification_threshold float,
+    job_classification_threshold float,
     status int not null,
     datetime timestamp default current_timestamp,
     constraint status_check check (status in (0,1))

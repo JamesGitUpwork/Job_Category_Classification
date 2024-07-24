@@ -3,8 +3,7 @@ import pandas as pd
 
 class ExtractText:
 
-    def __init__(self,schema):
-        self.schema = schema
+    def __init__(self):
         self.extract_text_df = None
 
     def __extract_description(self,job_post,output_ls):
@@ -47,8 +46,8 @@ class ExtractText:
         
     def getText(self,engine):
         temp = '''
-        select text_id, job_id, title, extract_text from {schema}.extract_text_tb 
-        where job_id in (select distinct(job_id) from {schema}.latest_job_post_tb)
+        select text_id, job_id, title, extract_text from current_sch.extract_text_tb 
+        where job_id in (select distinct(job_id) from current_sch.current_job_post_tb)
         ''' 
         query = temp.format(schema=self.schema)
         with engine.connect() as con:
@@ -60,8 +59,8 @@ class ExtractText:
         return df
     
     def insertText(self,engine):
-        self.extract_text_df.to_sql('extract_text_tb',
+        self.extract_text_df.to_sql('current_extract_text_tb',
                                     engine,
-                                    schema=self.schema,
+                                    schema='current_sch',
                                     if_exists='append',
                                     index=False)

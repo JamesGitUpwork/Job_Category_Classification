@@ -5,8 +5,7 @@ import numpy as np
 
 class CreateJobDescription:
 
-    def __init__(self,schema):
-        self.schema = schema
+    def __init__(self):
         self.job_description_df = None
     
     def getMaxClassifyTextRunId(self,engine):

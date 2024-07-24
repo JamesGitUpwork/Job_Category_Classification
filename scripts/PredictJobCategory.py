@@ -8,8 +8,7 @@ import joblib
 
 class PredictJobCategory:
 
-    def __init__(self,schema):
-        self.schema = schema
+    def __init__(self):
         column_names = ['job_id','description_id','prediction','category','probability','description_run_id','run_predict_job_id']
         self.job_cat_prediction_df = pd.DataFrame(columns=column_names)
 
