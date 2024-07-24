@@ -4,32 +4,34 @@ import pandas as pd
 
 class GetJobs:
 
-    def __init__(self,schema):
-        self.schema = schema
+    def __init__(self,job_run_id):
+        self.job_run_id = job_run_id
         self.latest_job_post_df = None
      
     # Need ability to retrieve job posts from CI and store in latest_job_post_tb
     def fetchLatestJobs(self,engine):
         temp = '''
-        select distinct on (job_id) * from {}.latest_job_post_tb
+        select distinct on (job_id) 
+            {} as job_run_id, 
+            job_id, title, description_md, created_at 
+            from test_sch.latest_job_post_tb
         '''
-        query = temp.format(self.schema)
+        query = temp.format(self.job_run_id)
         with engine.connect() as con:
             text_query = text(query)
             rs = con.execute(text_query)
 
             rows = rs.fetchall()
-
-        columns = ['job_id','title','link','salary_summary','school_id',
-                   'description_md','created_at','datetime']
+        
+        columns = ['job_run_id','job_id','title','description_md','created_at']
         self.latest_job_post_df = pd.DataFrame(rows,columns=columns)
-
-    def getLatestJobs(self):
+    
+    def getCurrentJobPosts(self):
         return self.latest_job_post_df
 
     def insertLatestJobs(self,engine):
-        self.latest_job_post_df.to_sql('job_post_tb',
+        self.latest_job_post_df.to_sql('current_job_post_tb',
                                     engine,
-                                    schema=self.schema,
+                                    schema='current_sch',
                                     if_exists='append',
                                     index=False)
