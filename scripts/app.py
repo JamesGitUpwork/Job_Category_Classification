@@ -16,7 +16,7 @@ def load_config(file_path):
     return config
 
 def predict_job_category(engine,text_class_model,text_threshold=0.3,category_threshold=0.3):
-
+    '''
     # Step 0: Get current job_id
     JobRunControl_obj = JobRunControl()
     current_job_run_id = JobRunControl_obj.getJobRunId(engine,text_threshold,category_threshold)
@@ -30,8 +30,10 @@ def predict_job_category(engine,text_class_model,text_threshold=0.3,category_thr
     # Step 2: Extract text from description
     ExtractText_obj = ExtractText()
     ExtractText_obj.extractText(engine)
-    # ExtractText_obj.insertText(engine)
+    ExtractText_obj.insertText(engine)
     extract_text_df = ExtractText_obj.getText(engine)
+    print(extract_text_df.head())
+    '''
 
     # Step 3: Classify Text
     ClassifyText_obj = ClassifyText()

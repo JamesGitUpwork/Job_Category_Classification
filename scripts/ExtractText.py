@@ -7,6 +7,7 @@ class ExtractText:
         self.extract_text_df = None
 
     def __extract_description(self,job_post,output_ls):
+        job_run_id = job_post['job_run_id']
         job_id = job_post['job_id']
         title = job_post['title']
         text = job_post['description_md']
@@ -15,47 +16,44 @@ class ExtractText:
         threshold_length = 50
         for i, line in enumerate(text_ls):
             if len(line) > threshold_length:
-                output = [job_id,title,line]
+                output = [job_run_id,job_id,title,line]
                 output_ls.append(output)
         
         return output_ls
 
-    def extractText(self,engine,query):
-        # Extract job id, title, and description
+    def extractText(self,engine):
+        # Extract job_run_id, job id, title, and description
+        query = '''
+        select job_run_id, job_id, title, description_md
+        from current_sch.current_job_post_tb
+        '''
+
         with engine.connect() as con:
             text_query = text(query)
             rs = con.execute(text_query)
 
             rows = rs.fetchall()
 
-        job_posts_info = pd.DataFrame(rows,columns=['job_id','title','description_md'])
+        job_posts_info = pd.DataFrame(rows,columns=['job_run_id','job_id','title','description_md'])
 
         output_ls = []
-        flag = 0 # Having a flag maybe uncessary
         for index, job_post in job_posts_info.iterrows():
-            if flag % 100 == 0:
-                print(flag)
-            flag = flag + 1
             output_ls = self.__extract_description(job_post,output_ls)
 
-        columns = ['job_id','title','text']
-        text_df = pd.DataFrame(output_ls,columns=columns)
-
-        self.extract_text_df = text_df[['job_id','title','text']]
-        self.extract_text_df.set_axis(['job_id','title','extract_text'],axis=1,inplace=True)
+        columns = ['job_run_id','job_id','title','extract_text']
+        self.extract_text_df = pd.DataFrame(output_ls,columns=columns)
         
     def getText(self,engine):
-        temp = '''
-        select text_id, job_id, title, extract_text from current_sch.extract_text_tb 
-        where job_id in (select distinct(job_id) from current_sch.current_job_post_tb)
+        query = '''
+        select job_run_id, text_id, job_id, title, extract_text 
+        from current_sch.current_extract_text_tb 
         ''' 
-        query = temp.format(schema=self.schema)
         with engine.connect() as con:
             text_query = text(query)
             rs = con.execute(text_query)
             rows = rs.fetchall()
 
-        df = pd.DataFrame(rows,columns=['text_id','job_id','title','extract_text'])
+        df = pd.DataFrame(rows,columns=['job_run_id','text_id','job_id','title','extract_text'])
         return df
     
     def insertText(self,engine):
