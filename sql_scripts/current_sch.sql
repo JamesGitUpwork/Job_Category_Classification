@@ -44,7 +44,6 @@ create table current_sch.current_job_category_prediction_tb (
     prediction integer,
     category varchar,
     probability float,
-    description_run_id integer,
     vec_model varchar references fact_sch.vectorization_model_tb(name),
     category_model varchar references fact_sch.job_classification_model_tb(name),
     datetime timestamp default current_timestamp

@@ -16,7 +16,7 @@ def load_config(file_path):
     return config
 
 def predict_job_category(engine,text_class_model,text_threshold=0.8,category_threshold=0.3):
-    '''
+
     # Step 0: Get current job_id
     JobRunControl_obj = JobRunControl()
     current_job_run_id = JobRunControl_obj.getJobRunId(engine,text_threshold,category_threshold)
@@ -39,7 +39,7 @@ def predict_job_category(engine,text_class_model,text_threshold=0.8,category_thr
     #ClassifyText_obj.classifyText(extract_text_df,text_class_model,text_threshold)
     #ClassifyText_obj.insertTextPrediction(engine)
     classified_text_df = ClassifyText_obj.getTextPrediction(engine)
-    '''
+
     # Step 4: Create Job Desscription
     CreateJobDescription_obj = CreateJobDescription()
     #CreateJobDescription_obj.createJobDescription(classified_text_df)
@@ -48,10 +48,9 @@ def predict_job_category(engine,text_class_model,text_threshold=0.8,category_thr
 
     # Step 5: Predict Job Category
     PredictionJobCategory_obj = PredictJobCategory()
-    PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
-    PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
-    job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription()
-    job_prediction_df.head()
+    #PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
+    #PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
+    job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription(engine)
 
 # Get name of text classification model
 def getTextClassModel(engine,version=0):
