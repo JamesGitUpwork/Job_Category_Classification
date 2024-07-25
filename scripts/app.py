@@ -15,7 +15,7 @@ def load_config(file_path):
         config = yaml.safe_load(f)
     return config
 
-def predict_job_category(engine,text_class_model,text_threshold=0.3,category_threshold=0.3):
+def predict_job_category(engine,text_class_model,text_threshold=0.8,category_threshold=0.3):
     '''
     # Step 0: Get current job_id
     JobRunControl_obj = JobRunControl()
@@ -28,29 +28,28 @@ def predict_job_category(engine,text_class_model,text_threshold=0.3,category_thr
     job_posts_df = GetJobPosts_obj.getCurrentJobPosts()
 
     # Step 2: Extract text from description
+    
     ExtractText_obj = ExtractText()
-    ExtractText_obj.extractText(engine)
-    ExtractText_obj.insertText(engine)
+    #ExtractText_obj.extractText(engine)
+    #ExtractText_obj.insertText(engine)
     extract_text_df = ExtractText_obj.getText(engine)
-    print(extract_text_df.head())
-    '''
 
     # Step 3: Classify Text
     ClassifyText_obj = ClassifyText()
-    ClassifyText_obj.classifyText(extract_text_df,text_class_model,engine,text_threshold)
-    # ClassifyText_obj.insertTextPrediction(engine)
-    classified_text_df = ClassifyText_obj.getTextPrediction()
-    
+    #ClassifyText_obj.classifyText(extract_text_df,text_class_model,text_threshold)
+    #ClassifyText_obj.insertTextPrediction(engine)
+    classified_text_df = ClassifyText_obj.getTextPrediction(engine)
+    '''
     # Step 4: Create Job Desscription
     CreateJobDescription_obj = CreateJobDescription()
-    CreateJobDescription_obj.createJobDescription(engine,classified_text_df)
+    #CreateJobDescription_obj.createJobDescription(classified_text_df)
     #CreateJobDescription_obj.insertJobDescription(engine)
     job_description_df = CreateJobDescription_obj.getJobDescription(engine)
 
     # Step 5: Predict Job Category
     PredictionJobCategory_obj = PredictJobCategory()
     PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
-    #PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
+    PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
     job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription()
     job_prediction_df.head()
 
@@ -92,7 +91,7 @@ def run():
     extract_text_model = getTextClassModel(engine)
 
     # Configure thresholds
-    text_class_threshold = 0.3
+    text_class_threshold = 0.8
     category_class_threshold = 0.3
 
     # Predict job category
