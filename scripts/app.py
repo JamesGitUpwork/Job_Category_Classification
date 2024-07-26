@@ -51,6 +51,7 @@ def predict_job_category(engine,text_class_model,text_threshold=0.8,category_thr
     job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription(engine)
 
     # Step 6: Update JobRunId
+    JobRunControl().updateSuccessJobRunId(engine,current_job_run_id)
 
 # Get name of text classification model
 def getTextClassModel(engine,version=0):
