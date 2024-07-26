@@ -18,17 +18,15 @@ def load_config(file_path):
 def predict_job_category(engine,text_class_model,text_threshold=0.8,category_threshold=0.3):
 
     # Step 0: Get current job_id
-    JobRunControl_obj = JobRunControl()
-    current_job_run_id = JobRunControl_obj.getJobRunId(engine,text_threshold,category_threshold)
+    current_job_run_id = JobRunControl().getJobRunId(engine,text_threshold,category_threshold)
 
     # Step 1: Get Job Posts
-    GetJobPosts_obj = GetJobs(current_job_run_id)
+    GetJobPosts_obj = GetJobs(current_job_run_id,'current')
     GetJobPosts_obj.fetchLatestJobs(engine)
     GetJobPosts_obj.insertLatestJobs(engine)
     job_posts_df = GetJobPosts_obj.getCurrentJobPosts()
 
-    # Step 2: Extract text from description
-    
+    # Step 2: Extract text from description    
     ExtractText_obj = ExtractText()
     #ExtractText_obj.extractText(engine)
     #ExtractText_obj.insertText(engine)
@@ -51,6 +49,8 @@ def predict_job_category(engine,text_class_model,text_threshold=0.8,category_thr
     #PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
     #PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
     job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription(engine)
+
+    # Step 6: Update JobRunId
 
 # Get name of text classification model
 def getTextClassModel(engine,version=0):

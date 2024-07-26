@@ -1,6 +1,8 @@
 from sqlalchemy import text
 import pandas as pd
 
+from ErrorHandler import ErrorHandler
+
 class ExtractText:
 
     def __init__(self):

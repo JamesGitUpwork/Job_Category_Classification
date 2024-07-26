@@ -48,3 +48,11 @@ create table current_sch.current_job_category_prediction_tb (
     category_model varchar references fact_sch.job_classification_model_tb(name),
     datetime timestamp default current_timestamp
 );
+
+create table current_sch.current_error_logs_tb (
+    id serial primary key,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    log_level VARCHAR(10),
+    job_run_id int,
+    message TEXT
+)
