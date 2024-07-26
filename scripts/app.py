@@ -26,26 +26,26 @@ def predict_job_category(engine,text_class_model,text_threshold=0.8,category_thr
     GetJobPosts_obj.insertLatestJobs(engine)
     job_posts_df = GetJobPosts_obj.getCurrentJobPosts()
 
-    # Step 2: Extract text from description    
-    ExtractText_obj = ExtractText()
-    #ExtractText_obj.extractText(engine)
+    # Step 2: Extract text from description
+    ExtractText_obj = ExtractText(current_job_run_id,'current')
+    ExtractText_obj.extractText(engine)
     #ExtractText_obj.insertText(engine)
     extract_text_df = ExtractText_obj.getText(engine)
 
     # Step 3: Classify Text
-    ClassifyText_obj = ClassifyText()
+    ClassifyText_obj = ClassifyText(current_job_run_id,'current')
     #ClassifyText_obj.classifyText(extract_text_df,text_class_model,text_threshold)
     #ClassifyText_obj.insertTextPrediction(engine)
     classified_text_df = ClassifyText_obj.getTextPrediction(engine)
 
     # Step 4: Create Job Desscription
-    CreateJobDescription_obj = CreateJobDescription()
+    CreateJobDescription_obj = CreateJobDescription(current_job_run_id,'current')
     #CreateJobDescription_obj.createJobDescription(classified_text_df)
     #CreateJobDescription_obj.insertJobDescription(engine)
     job_description_df = CreateJobDescription_obj.getJobDescription(engine)
 
     # Step 5: Predict Job Category
-    PredictionJobCategory_obj = PredictJobCategory()
+    PredictionJobCategory_obj = PredictJobCategory(current_job_run_id,'current')
     #PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
     #PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
     job_prediction_df = PredictionJobCategory_obj.getJobCategoryDescription(engine)

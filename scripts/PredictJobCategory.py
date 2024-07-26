@@ -1,17 +1,20 @@
 from sqlalchemy import create_engine
 from sqlalchemy import text
+from ErrorHandler import ErrorHandler
 
 import pandas as pd
 import numpy as np
 
 import joblib
 
-class PredictJobCategory:
+class PredictJobCategory(ErrorHandler):
 
-    def __init__(self):
+    def __init__(self,job_run_id,log_type):
         column_names = ['job_run_id','job_id','description_id','prediction',
                        'category','probability','vec_model','category_model']
         self.job_cat_prediction_df = pd.DataFrame(columns=column_names)
+        super().__init__(log_type)
+        self.job_run_id = job_run_id
     
     def __getModels(self,engine,cat_version=0,vec_version=0):
         if cat_version == 0 and vec_version == 0:
@@ -45,64 +48,68 @@ class PredictJobCategory:
         return model_name_df
 
     def classifyJobDescription(self,engine,job_description_df,category_threshold=0.3,cat_ver=0,vec_ver=0):
-        # Get model names
-        model_name_df = self.__getModels(engine,cat_version=cat_ver,vec_version=vec_ver)
+        try:
+            # Get model names
+            model_name_df = self.__getModels(engine,cat_version=cat_ver,vec_version=vec_ver)
 
-        column_name = ['job_run_id','job_id','description_id','prediction',
-                       'category','probability','vec_model','category_model']
+            column_name = ['job_run_id','job_id','description_id','prediction',
+                        'category','probability','vec_model','category_model']
 
-        for index, row in model_name_df.iterrows():
-            
-            # Get category name
-            category = row['category']
+            for index, row in model_name_df.iterrows():
+                
+                # Get category name
+                category = row['category']
 
-            # Create job classification model file name
-            cat_name = row['cat_name']
-            temp = './job_classification_model/{}.pkl'
-            modelFile = temp.format(cat_name)
+                # Create job classification model file name
+                cat_name = row['cat_name']
+                temp = './job_classification_model/{}.pkl'
+                modelFile = temp.format(cat_name)
 
-            # Create vectorization model file name
-            vec_name = row['vec_name']
-            temp = './vectorization_model/{}.pkl'
-            vecFile = temp.format(vec_name)
+                # Create vectorization model file name
+                vec_name = row['vec_name']
+                temp = './vectorization_model/{}.pkl'
+                vecFile = temp.format(vec_name)
 
-            # Load models
-            count_vectorizer = joblib.load(vecFile)
-            model = joblib.load(modelFile)
+                # Load models
+                count_vectorizer = joblib.load(vecFile)
+                model = joblib.load(modelFile)
 
-            # Vectorization
-            test_count = count_vectorizer.transform(job_description_df['description'])
+                # Vectorization
+                test_count = count_vectorizer.transform(job_description_df['description'])
 
-            # Predict job category
-            predictions = model.predict(test_count)
+                # Predict job category
+                predictions = model.predict(test_count)
 
-            # Adjust prediction based on threshold
-            y_pred_prob = model.predict_proba(test_count)
-            predictions = (y_pred_prob[:,1]>category_threshold).astype(int)
-            probability = y_pred_prob[:,1]
+                # Adjust prediction based on threshold
+                y_pred_prob = model.predict_proba(test_count)
+                predictions = (y_pred_prob[:,1]>category_threshold).astype(int)
+                probability = y_pred_prob[:,1]
 
-            num_rows = len(predictions)
+                num_rows = len(predictions)
 
-            cat = np.full(num_rows,category)
+                cat = np.full(num_rows,category)
 
-            vec_col = np.full(num_rows,vec_name)
+                vec_col = np.full(num_rows,vec_name)
 
-            model_col = np.full(num_rows,cat_name)
+                model_col = np.full(num_rows,cat_name)
 
-            job_run_id = job_description_df['job_run_id'].to_numpy()
+                job_run_id = job_description_df['job_run_id'].to_numpy()
 
-            job_id = job_description_df['job_id'].to_numpy()
+                job_id = job_description_df['job_id'].to_numpy()
 
-            description_id = job_description_df['description_id'].to_numpy()
+                description_id = job_description_df['description_id'].to_numpy()
 
-            temp = np.column_stack((job_run_id,job_id,
-                                    description_id,predictions,
-                                    cat,probability,
-                                    vec_col,model_col))
+                temp = np.column_stack((job_run_id,job_id,
+                                        description_id,predictions,
+                                        cat,probability,
+                                        vec_col,model_col))
 
-            temp_df = pd.DataFrame(temp,columns=column_name)
+                temp_df = pd.DataFrame(temp,columns=column_name)
 
-            self.job_cat_prediction_df = pd.concat([self.job_cat_prediction_df,temp_df],axis=0)
+                self.job_cat_prediction_df = pd.concat([self.job_cat_prediction_df,temp_df],axis=0)
+        except Exception as e:
+            message = "Predict Job Category Error"
+            self.pred_job_category_handle_exception(engine,self.job_run_id,e,message)
 
     def getJobCategoryDescription(self,engine):
         query = '''

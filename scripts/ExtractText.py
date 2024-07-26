@@ -3,10 +3,12 @@ import pandas as pd
 
 from ErrorHandler import ErrorHandler
 
-class ExtractText:
+class ExtractText(ErrorHandler):
 
-    def __init__(self):
+    def __init__(self,job_run_id,log_type):
+        super().__init__(log_type)
         self.extract_text_df = None
+        self.job_run_id = job_run_id
 
     def __extract_description(self,job_post,output_ls):
         job_run_id = job_post['job_run_id']
@@ -24,27 +26,31 @@ class ExtractText:
         return output_ls
 
     def extractText(self,engine):
-        # Extract job_run_id, job id, title, and description
-        query = '''
-        select job_run_id, job_id, title, description_md
-        from current_sch.current_job_post_tb
-        '''
+        try:
+            # Extract job_run_id, job id, title, and description
+            query = '''
+            select job_run_id, job_id, title, description_md
+            from current_sch.current_job_post_tb
+            '''
 
-        with engine.connect() as con:
-            text_query = text(query)
-            rs = con.execute(text_query)
+            with engine.connect() as con:
+                text_query = text(query)
+                rs = con.execute(text_query)
 
-            rows = rs.fetchall()
+                rows = rs.fetchall()
 
-        job_posts_info = pd.DataFrame(rows,columns=['job_run_id','job_id','title','description_md'])
+            job_posts_info = pd.DataFrame(rows,columns=['job_run_id','job_id','title','description_md'])
 
-        output_ls = []
-        for index, job_post in job_posts_info.iterrows():
-            output_ls = self.__extract_description(job_post,output_ls)
+            output_ls = []
+            for index, job_post in job_posts_info.iterrows():
+                output_ls = self.__extract_description(job_post,output_ls)
 
-        columns = ['job_run_id','job_id','title','extract_text']
-        self.extract_text_df = pd.DataFrame(output_ls,columns=columns)
-        
+            columns = ['job_run_id','job_id','title','extract_text']
+            self.extract_text_df = pd.DataFrame(output_ls,columns=columns)
+        except Exception as e:
+            message = "Extract Text Error"
+            self.extract_text_handle_exception(engine,self.job_run_id,e,message)
+            
     def getText(self,engine):
         query = '''
         select job_run_id, text_id, job_id, title, extract_text 

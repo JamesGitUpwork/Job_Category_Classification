@@ -16,7 +16,7 @@ class GetJobs(ErrorHandler):
             select distinct on (job_id) 
                 {} as job_run_id, 
                 job_id, title, description_md, created_at 
-                from test_sch.latest_job_post_tb limit 0
+                from test_sch.latest_job_post_tb
             '''
             query = temp.format(self.job_run_id)
             with engine.connect() as con:

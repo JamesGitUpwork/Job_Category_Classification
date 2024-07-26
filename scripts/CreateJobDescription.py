@@ -1,24 +1,30 @@
 from sqlalchemy import text
+from ErrorHandler import ErrorHandler
 
 import pandas as pd
 import numpy as np
 
-class CreateJobDescription:
+class CreateJobDescription(ErrorHandler):
 
-    def __init__(self):
+    def __init__(self,job_run_id,log_type):
+        super().__init__(log_type)
+        self.job_run_id = job_run_id
         self.job_description_df = None
 
-    def createJobDescription(self,text_extract_df):
+    def createJobDescription(self,engine,text_extract_df):
+        try:
+            df = text_extract_df[text_extract_df['prediction']==1]
+            grouped_df = df.groupby('job_id').apply(
+                lambda x: f"{x['title'].iloc[0]}. " + " ".join(x['extract_text'])
+            ).reset_index(name='description')
 
-        df = text_extract_df[text_extract_df['prediction']==1]
-        grouped_df = df.groupby('job_id').apply(
-            lambda x: f"{x['title'].iloc[0]}. " + " ".join(x['extract_text'])
-        ).reset_index(name='description')
+            job_run_id = text_extract_df['job_run_id'].unique()[0]
+            grouped_df.insert(0,'job_run_id',job_run_id)
 
-        job_run_id = text_extract_df['job_run_id'].unique()[0]
-        grouped_df.insert(0,'job_run_id',job_run_id)
-
-        self.job_description_df = grouped_df
+            self.job_description_df = grouped_df
+        except Exception as e:
+            message = "Create Job Description Error"
+            self.create_job_description_handle_exception(engine,self.job_run_id,e,message)
 
     def getJobDescription(self,engine):
         query = '''

@@ -43,5 +43,29 @@ class ErrorHandler:
     def get_jobs_handle_exception(self,engine,job_run_id,exception,message='An error occurred'):
         self.log_exception(engine,job_run_id,exception,message)
         JobRunControl.updateFailedJobRunId(engine,job_run_id)
-        sys.exit("Program terminated after handling exception.")
+        sys.exit("Program terminated after handling get jobs exception.")
+
+    # Handle errors from ExtractText
+    def extract_text_handle_exception(self,engine,job_run_id,exception,message='An error occurred'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling extract text exception.")
+
+    # Handle errors from ClassifyText
+    def extract_classify_text_exception(self,engine,job_run_id,exception,message='An error occurred'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling classify text exception.")
+
+    # Handle errors from JobDescription
+    def create_job_description_handle_exception(self,engine,job_run_id,exception,message='An error occurred'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling create job description exception.")
+
+    # Handle errors from PredictJobCategory
+    def pred_job_category_handle_exception(self,engine,job_run_id,exception,message='An error occurred'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling predict job category exception.")
 
