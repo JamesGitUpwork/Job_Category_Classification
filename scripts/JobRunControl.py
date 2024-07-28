@@ -4,7 +4,7 @@ import pandas as pd
 class JobRunControl:
 
     @staticmethod
-    def getJobRunId(engine,text_threshold,class_threshold):
+    def setJobRunId(engine,text_threshold,class_threshold):
         id_query = '''
         select max(job_run_id) from fact_sch.job_run_id_tb
         '''
@@ -25,7 +25,7 @@ class JobRunControl:
         JobRunControl.__insertJobRunId(engine,current_job_run_id,text_threshold,class_threshold,2)
 
         return current_job_run_id
-
+    
     @staticmethod
     def __insertJobRunId(engine,job_run_id,text_threshold,class_threshold,status):
         data = {

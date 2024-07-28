@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy import text
 from ErrorHandler import ErrorHandler
+from SchemaDataManager import SchemaDataManager
 
 import pandas as pd
 import numpy as np

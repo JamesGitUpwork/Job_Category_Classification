@@ -11,17 +11,36 @@ class CreateJobDescription(ErrorHandler):
         self.job_run_id = job_run_id
         self.job_description_df = None
 
-    def createJobDescription(self,engine,text_extract_df):
+    # Creates job description 
+    def createAndInsertJobDescription(self,engine):
         try:
-            df = text_extract_df[text_extract_df['prediction']==1]
-            grouped_df = df.groupby('job_id').apply(
-                lambda x: f"{x['title'].iloc[0]}. " + " ".join(x['extract_text'])
-            ).reset_index(name='description')
-
-            job_run_id = text_extract_df['job_run_id'].unique()[0]
-            grouped_df.insert(0,'job_run_id',job_run_id)
-
-            self.job_description_df = grouped_df
+            with engine.connect() as conn:
+                with conn.begin() as trans:
+                    query = text('''
+                        insert into current_sch.current_job_description_tb (job_run_id, job_id, description)
+                        (
+                            select 
+                            job_run_id,
+                            job_id,
+                            title as description
+                            from current_sch.current_extract_text_prediction_tb
+                            group by
+                            job_run_id, job_id, title
+                            having sum(prediction) = 0
+                        )
+                        union
+                        (
+                            select 
+                                job_run_id,
+                                job_id,
+                                string_agg(title || '. ' || extract_text,' ') as description
+                            from current_sch.current_extract_text_prediction_tb
+                            where prediction = 1
+                            group by
+                            job_run_id, job_id
+                        )
+                         ''')
+                    conn.execute(query)
         except Exception as e:
             message = "Create Job Description Error"
             self.create_job_description_handle_exception(engine,self.job_run_id,e,message)
@@ -38,11 +57,5 @@ class CreateJobDescription(ErrorHandler):
 
         df = pd.DataFrame(rows,columns=['job_run_id','description_id','job_id','description'])
         return df
-
-    def insertJobDescription(self,engine):
-        self.job_description_df.to_sql('current_job_description_tb',
-                                       engine,
-                                       schema='current_sch',
-                                       if_exists='append',index=False)
 
 
