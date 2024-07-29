@@ -37,6 +37,25 @@ class GetJobs(ErrorHandler):
     def getCurrentJobPosts(self):
         return self.latest_job_post_df
 
+    def wipePreviousJobPosts(self,engine):
+        tables = [
+            'current_sch.current_job_category_prediction_tb',
+            'current_sch.current_job_description_tb',
+            'current_sch.current_extract_text_prediction_tb',
+            'current_sch.current_extract_text_tb',
+            'current_sch.current_job_post_tb'
+        ]
+
+        try:
+            with engine.connect() as conn:
+                with conn.begin() as trans:
+                    for table in tables:
+                        query = text(f'truncate table {table} restart identity cascade;')
+                        conn.execute(query)
+        except Exception as e:
+            message = "Wipe previous job run data error"
+            self.wipe_previous_job_posts_handle_exception(engine,self.job_run_id,e,message)
+
     def insertLatestJobs(self,engine):
         self.latest_job_post_df.to_sql('current_job_post_tb',
                                     engine,

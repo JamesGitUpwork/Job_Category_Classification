@@ -69,3 +69,15 @@ class ErrorHandler:
         JobRunControl.updateFailedJobRunId(engine,job_run_id)
         sys.exit("Program terminated after handling predict job category exception.")
 
+    # Handle errors from SchemaDataManager
+    def store_current_job_run_data_handle_exception(self,engine,job_run_id,exception,message='An error ocurred'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling current job data run transfer exception.")
+
+    # Handle erros from previous job run data wipe
+    def wipe_previous_job_posts_handle_exception(self,engine,job_run_id,exception,message='An error occured'):
+        self.log_exception(engine,job_run_id,exception,message)
+        JobRunControl.updateFailedJobRunId(engine,job_run_id)
+        sys.exit("Program terminated after handling current job data run transfer exception.")
+
