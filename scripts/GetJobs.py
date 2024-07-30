@@ -2,15 +2,22 @@ from sqlalchemy import text
 from ErrorHandler import ErrorHandler
 import pandas as pd
 
+from WinthropConfig import WinthropConfig
+
 class GetJobs(ErrorHandler):
 
     def __init__(self,job_run_id,log_type):
         super().__init__(log_type)
         self.job_run_id = job_run_id
         self.latest_job_post_df = None
-     
-    # Need ability to retrieve job posts from CI and store in latest_job_post_tb
+    
     def fetchLatestJobs(self,engine):
+        ransack_query = '''
+        api_instance.get_job_posts(q={"catetgories_ancestry_start": "/1/", "s": "updated_at desc")
+        '''
+
+    # Need ability to retrieve job posts from CI and store in latest_job_post_tb
+    def fetchTestJobs(self,engine):
         try:
             temp = '''
             select distinct on (job_id) 
