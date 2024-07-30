@@ -20,13 +20,15 @@ def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,cate
     # Step 0: Get current job_id
     current_job_run_id = JobRunControl().setJobRunId(engine,text_threshold,category_threshold)
     logging.info(f"Obtained job_run_id: {current_job_run_id}")
-    
+    print(f"Obtained job_run_id: {current_job_run_id}")
+
     # Step 1: Get Job Posts
     GetJobPosts_obj = GetJobs(current_job_run_id,ci_host,'current')
-    GetJobPosts_obj.fetchLatestJobs(engine)
+    GetJobPosts_obj.fetchLatestJobs()
     GetJobPosts_obj.wipePreviousJobPosts(engine)
     GetJobPosts_obj.insertLatestJobs(engine)
     logging.info("Successfully fetched and inserted latest job posts")
+    print("Successfully fetched and inserted latest job posts")
 
     # Step 2: Extract text from description
     logging.info("Step 1: Fetching and inserting latest job posts")
@@ -35,20 +37,23 @@ def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,cate
     ExtractText_obj.insertText(engine)
     extract_text_df = ExtractText_obj.getText(engine)
     logging.info("Successfully extracted text from job descriptions")
+    print("Successfully extracted text from job descriptions")
     
     # Step 3: Classify Text
     logging.info("Step 3: Classifying text")
     ClassifyText_obj = ClassifyText(current_job_run_id,'current')
-    ClassifyText_obj.classifyText(extract_text_df,text_class_model,text_threshold)
+    ClassifyText_obj.classifyText(engine,extract_text_df,text_class_model,text_threshold)
     ClassifyText_obj.insertTextPrediction(engine)
     logging.info("Successfully classified text")
+    print("Successfully classified text")
 
-    # Step 4: Create Job Desscription
+    # Step 4: Create Job Description
     logging.info("Step 4: Creating job descriptions")
     CreateJobDescription_obj = CreateJobDescription(current_job_run_id,'current')
     CreateJobDescription_obj.createAndInsertJobDescription(engine)
     job_description_df = CreateJobDescription_obj.getJobDescription(engine)
     logging.info("Successfully created job descriptions")
+    print("Successfully created job descriptions")
 
     # Step 5: Predict Job Category
     logging.info("Step 5: Predicting job categories")
@@ -56,17 +61,21 @@ def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,cate
     PredictionJobCategory_obj.classifyJobDescription(engine,job_description_df,category_threshold)
     PredictionJobCategory_obj.insertJobCategoryPrediction(engine)
     logging.info("Successfully predicted job categories")
+    print("Successfully predicted job categories")
 
     # Step 6: Update JobRunId
     logging.info("Step 6: Updating job_run_id with success status")
     JobRunControl().updateSuccessJobRunId(engine,current_job_run_id)
     logging.info("Successfully updated job_run_id with success status")
-    
+    print("Successfully updated job_run_id with success status")
+
     # Step 7: Copy current job run data to data_sch
     logging.info("Step 7: Copy current jun run data to data_sch")
     SchemaDataManager_obj = SchemaDataManager(current_job_run_id,'data')
     SchemaDataManager_obj.store_current_job_run_data(engine)
+    SchemaDataManager_obj.transfer_prediction_for_verification(engine)
     logging.info("Successfully transfer current job run data to data_sch")
+    print("Successfully transfer current job run data to data_sch")
 
 # Get name of text classification model
 def getTextClassModel(engine,version=0):

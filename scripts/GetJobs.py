@@ -12,7 +12,7 @@ class GetJobs(ErrorHandler):
         self.ci_host = ci_host
         self.latest_job_post_df = None
     
-    def fetchLatestJobs(self,engine):
+    def fetchLatestJobs(self):
         ransack_query = {
                     "catetgories_ancestry_start": "/1/", 
                     "s": "updated_at desc"  
@@ -24,7 +24,7 @@ class GetJobs(ErrorHandler):
         job_post_df = pd.DataFrame(api_response_dict['data'])
         temp = job_post_df[columns]
         temp.insert(0,'job_run_id',self.job_run_id)
-        temp.rename(columns={'id':'job_id'})
+        temp = temp.rename(columns={'id':'job_id'})
         
         self.latest_job_post_df = temp
 
