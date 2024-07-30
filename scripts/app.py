@@ -15,14 +15,14 @@ def load_config(file_path):
         config = yaml.safe_load(f)
     return config
 
-def predict_job_category(engine,text_class_model,text_threshold=0.8,category_threshold=0.3):
+def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,category_threshold=0.3):
     
     # Step 0: Get current job_id
     current_job_run_id = JobRunControl().setJobRunId(engine,text_threshold,category_threshold)
     logging.info(f"Obtained job_run_id: {current_job_run_id}")
     
     # Step 1: Get Job Posts
-    GetJobPosts_obj = GetJobs(current_job_run_id,'current')
+    GetJobPosts_obj = GetJobs(current_job_run_id,ci_host,'current')
     GetJobPosts_obj.fetchLatestJobs(engine)
     GetJobPosts_obj.wipePreviousJobPosts(engine)
     GetJobPosts_obj.insertLatestJobs(engine)
@@ -97,6 +97,7 @@ def run():
     database = config['local_db']['database']
     username = config['local_db']['username']
     password = config['local_db']['password']
+    ci_host = config['winthrop_ci']['host']
 
     # Create database connection instance
     sqlconn_obj = SqlConn(username,password,db_host,db_port,database)
@@ -111,6 +112,7 @@ def run():
 
     # Predict job category
     predict_job_category(engine,
+                         ci_host,
                          extract_text_model,
                          text_threshold=text_class_threshold,
                          category_threshold=category_class_threshold)

@@ -1,20 +1,32 @@
 from sqlalchemy import text
 from ErrorHandler import ErrorHandler
 import pandas as pd
-
+from winthrop_client_python.models.job_post_collection import JobPostCollection
 from WinthropConfig import WinthropConfig
 
 class GetJobs(ErrorHandler):
 
-    def __init__(self,job_run_id,log_type):
+    def __init__(self,job_run_id,ci_host,log_type):
         super().__init__(log_type)
         self.job_run_id = job_run_id
+        self.ci_host = ci_host
         self.latest_job_post_df = None
     
     def fetchLatestJobs(self,engine):
-        ransack_query = '''
-        api_instance.get_job_posts(q={"catetgories_ancestry_start": "/1/", "s": "updated_at desc")
-        '''
+        ransack_query = {
+                    "catetgories_ancestry_start": "/1/", 
+                    "s": "updated_at desc"  
+                    }
+        ci_instance = WinthropConfig.create_instance(self.ci_host)
+        api_response = ci_instance.get_job_posts(q=ransack_query)
+        columns = ['id','title','description_md','created_at']
+        api_response_dict = JobPostCollection.to_dict(api_response)
+        job_post_df = pd.DataFrame(api_response_dict['data'])
+        temp = job_post_df[columns]
+        temp.insert(0,'job_run_id',self.job_run_id)
+        temp.rename(columns={'id':'job_id'})
+        
+        self.latest_job_post_df = temp
 
     # Need ability to retrieve job posts from CI and store in latest_job_post_tb
     def fetchTestJobs(self,engine):
