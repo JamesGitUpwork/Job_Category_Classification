@@ -17,7 +17,7 @@ END;
 $$;
 
 -- Inserting seed data for each verification table in sot_sch
-insert into sot_sch.health_and_medical_services_tb (
+insert into sot_sch.laboratory_and_research_tb (
 	job_id, category, prediction, description
 )
 select * from 
@@ -28,14 +28,14 @@ select * from
 		1 as prediction,
 		concat(title,'. ', description) as description
 		from public.corrected_categorization_tb
-		where predicted_category in ('Health and Medical Services')
+		where predicted_category in ('Laboratory and Research')
 		and tag = 1
 		union all
 		select
 		job_id,
-		'Health and Medical Services' as category,
+		'Laboratory and Research' as category,
 		0 as prediction,
 		concat(title,'. ', description) as description
 		from public.job_categorization_vw 
-		where predicted_category not in ('Health and Medical Services')
+		where predicted_category not in ('Laboratory and Research')
 	)
