@@ -16,61 +16,46 @@ import joblib
 
 class TrainModel:
 
-    def __init__(self):
-        pass
+    # Transform verified data from data_sch and load into sot_sch
+    def __convert_to_table_name(self,input_string):
+        # Convert to lowercase
+        input_string = input_string.lower()
+        # Replace spaces with underscores
+        table_name = input_string.replace(' ', '_')
+        # Add '_tb' suffix
+        table_name += '_tb'
+        return table_name
 
     def getDistinctCategory(self,engine):
         temp = '''
-        select distinct(category) from fact_sch.job_classification_model_tb
+        select distinct(category) from data_sch.job_category_prediction_verification_tb
         '''
-        category_ls = None
-        return category_ls
-
-    def getNonTargetData(self,target_category,engine):
-        temp = '''
-            select job_id, predicted_category as category, concat(title,'. ', description) as description from public.job_categorization_vw 
-                where predicted_category != '{}'
-            '''
-        non_target_query = temp.format(target_category)
-
-        with engine.connect() as con:
-            query = text(non_target_query)
-            rs = con.execute(query)
-
+        with engine.connect() as conn:
+            query = text(temp)
+            rs = conn.execute(query)
             rows = rs.fetchall()
 
-            non_target_data = pd.DataFrame(rows,columns=['job_id','description'])
-
-        # Tag non-target data
-        non_target_data['tag'] = 0
-
-        return non_target_data    
+        distinct_category = pd.DataFrame(rows,columns=['category'])
+        return distinct_category
     
-    def getTargetData(self,target_category,engine):
-        temp = '''
-            select job_id, predicted_category as category, concat(title,'. ', description) as description from public.corrected_categorization_tb 
-                where predicted_category = '{}' and tag = 1
-        '''
-        target_query = temp.format(target_category)
+    def getTrainingData(self,target_category,engine):
+        with engine.connect() as conn:
+            with conn.begin() as trans:
+                temp = '''
+                    select prediction, description from sot_sch.{}
+                    '''
+                target_query = temp.format(self.__convert_to_table_name(target_category))
 
-        with engine.connect() as con:
-            query = text(target_query)
-            rs = con.execute(query)
+                with engine.connect() as con:
+                    query = text(target_query)
+                    rs = con.execute(query)
 
-            rows = rs.fetchall()
+                    rows = rs.fetchall()
 
-        target_data = pd.DataFrame(rows,columns=['job_id','description'])
-
-        # Tag target data
-        target_data['tag'] = 1
+                target_data = pd.DataFrame(rows,columns=['prediction','description'])
 
         return target_data
-    
-    def combineData(self,target_data,non_target_data):
-        full_data = pd.concat([target_data,non_target_data],axis=0)
-
-        return full_data
-    
+        
     def validation_metrics(self,y_test,y_pred):
         accuracy = accuracy_score(y_test, y_pred)
         cm = confusion_matrix(y_test, y_pred)
@@ -99,14 +84,53 @@ class TrainModel:
             print(f"Actual Tag: {row['tag']}, Predicted Tag: {row['predicted_tag']}")
         print()
 
-    def saveModel(self,model,target_category):
-        temp = '../models/{}_classification_model_v2.pkl'
-        fileName = temp.format(target_category)
+    def __updateJobClassModelTable(self,engine):
+        pass
+
+    def __getLatestClassVersion(self,category,engine):
+        with engine.connect() as conn:
+            temp = '''
+                select max(version) 
+                from fact_sch.job_classification_model_tb
+                where category = '{}'
+                '''
+            query = temp.format(category)
+            rs = conn.execute(text(query))
+            rows = rs.fetchall()
+
+            temp = pd.DataFrame(rows,columns=['max_id'])
+
+            max_id = temp['max_id'][0] + 1
+
+        return max_id
+    
+    def __getLatestVecVersion(self,category,engine):
+        with engine.connect() as conn:
+            temp = '''
+                select max(version) 
+                from fact_sch.vectorization_model_tb
+                where category = '{}'
+                '''
+            query = temp.format(category)
+            rs = conn.execute(text(query))
+            rows = rs.fetchall()
+
+            temp = pd.DataFrame(rows,columns=['max_id'])
+
+            max_id = temp['max_id'][0] + 1
+
+        return max_id
+
+    def __saveModel(self,model,target_category,engine):
+        max_id = self.__getLatestClassVersion(target_category,engine)
+        temp = '../job_classification_model/{category}_classification_model_v{version}.pkl'
+        fileName = temp.format(category=target_category,version=max_id)
         joblib.dump(model,fileName)
 
-    def saveCountVec(self,vec,target_category):
-        temp = '../models/{}_classification_vec_v2.pkl'
-        fileName = temp.format(target_category)
+    def __saveCountVec(self,vec,target_category,engine):
+        max_id = self.__getLatestVecVersion(target_category,engine)
+        temp = '../vectorization_model/{category}_classification_vec_v{version}.pkl'
+        fileName = temp.format(category=target_category,version=max_id)
         joblib.dump(vec,fileName)
 
     def checkDistribution(self,y_train,y_test):
@@ -130,18 +154,10 @@ class TrainModel:
         print("\nTesting Set Counts:")
         print(test_counts)
 
-    def trainModel(self):
-        # Target Category
-        target_category = 'Laboratory and Research'
-
-        target_data = self.getTargetData(target_category)
-        non_target_data = self.getNonTargetData(target_category)
-
-        full_data = self.combineData(target_data,non_target_data)
-
+    def trainModel(self,target_category,training_data,threshold,engine):
         # Split data into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(
-            full_data['description'], full_data['tag'], test_size=0.2, random_state=42,stratify=full_data['tag'])
+            training_data['description'], training_data['prediction'], test_size=0.2, random_state=42,stratify=training_data['prediction'])
 
         # Transform text data to Count features
         count_vectorizer = CountVectorizer()
@@ -154,11 +170,11 @@ class TrainModel:
 
         # Make predictions
         y_pred = model.predict(X_test_count)
+        y_pred_prob = model.predict_proba(X_test_count)
+        y_pred = (y_pred_prob[:,1] >= threshold).astype(int)
 
         self.validation_metrics(y_test, y_pred)
 
-        y_pred_prob = model.predict_proba(X_test_count)
-
-        # Adjust threshold
-        threshold = 0.3  # You can change this value
-        y_pred = (y_pred_prob[:,1] >= threshold).astype(int)
+        # Save Models
+        self.__saveModel(model,target_category,engine)
+        self.__saveCountVec(count_vectorizer,target_category,engine)
