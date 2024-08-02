@@ -84,8 +84,27 @@ class TrainModel:
             print(f"Actual Tag: {row['tag']}, Predicted Tag: {row['predicted_tag']}")
         print()
 
-    def __updateJobClassModelTable(self,engine):
-        pass
+    def updateJobClassModelTable(self,target_category,max_id,engine):
+        model_name = target_category + '_classification_model_v' + str(max_id)
+        temp = '''
+        insert into fact_sch.job_classification_model_tb (category,version,name)
+        values ('{category}',{version},'{name}')
+        '''
+        insert_statement = temp.format(category=target_category,version=max_id,name=model_name)
+        with engine.connect() as conn:
+            with conn.begin() as trans:
+                conn.execute(text(insert_statement))
+
+        model_name = target_category + '_vec_v' + str(max_id)
+        temp = '''
+        insert into fact_sch.vectorization_model_tb (category,version,name)
+        values ('{category}',{version},'{name}')
+        '''
+        insert_statement = temp.format(category=target_category,version=max_id,name=model_name)
+        with engine.connect() as conn:
+            with conn.begin() as trans:
+                conn.execute(text(insert_statement))
+
 
     def __getLatestClassVersion(self,category,engine):
         with engine.connect() as conn:
