@@ -10,7 +10,7 @@ class SchemaDataManager(ErrorHandler):
         self.job_run_id = job_run_id
 
     def transfer_prediction_for_verification(self,engine):
-        queries = {
+        temp = {
             '''
             insert into data_sch.job_category_prediction_verification_tb (
                 job_run_id,
@@ -34,9 +34,10 @@ class SchemaDataManager(ErrorHandler):
                 vec_model,
                 category_model,
                 datetime
-            from data_sch.job_category_prediction_tb;
+            from data_sch.job_category_prediction_tb where job_run_id = {};
             ''': ('Job Category Prediction transferred successfully.','Failed to copy job category predictions for verification.')
         }
+        queries = temp.format(self.job_run_id)
 
         with engine.connect() as conn:
             with conn.begin() as trans:

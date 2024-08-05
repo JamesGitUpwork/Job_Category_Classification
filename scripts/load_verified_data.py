@@ -28,7 +28,7 @@ df = pd.read_csv(verified_file_path)
 table_name = 'job_category_prediction_verification_tb'
 schema_name = 'data_sch'
 
-df.to_sql(table_name,engine,if_exists='append',index=False,schema=schema_name)
+# df.to_sql(table_name,engine,if_exists='append',index=False,schema=schema_name)
 
 
 # Transform verified data from data_sch and load into sot_sch
@@ -41,11 +41,26 @@ def convert_to_table_name(input_string):
     table_name += '_tb'
     return table_name
 
-temp = '''
-select distinct(category) from data_sch.job_category_prediction_verification_tb
+id_query = '''
+select max(job_run_id) from fact_sch.job_run_id_tb
 '''
+with engine.connect() as con:
+    query = text(id_query)
+    rs = con.execute(query)
+    rows = rs.fetchall()
+
+id_list = pd.DataFrame(rows,columns=['job_run_id'])
+
+job_run_id = id_list['job_run_id'].max()
+
+print(job_run_id)
+
+temp = '''
+select distinct(category) from data_sch.job_category_prediction_verification_tb where job_run_id = {}
+'''
+data_query = temp.format(job_run_id)
 with engine.connect() as conn:
-    query = text(temp)
+    query = text(data_query)
     rs = conn.execute(query)
     rows = rs.fetchall()
 

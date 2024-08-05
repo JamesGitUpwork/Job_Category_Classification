@@ -95,7 +95,7 @@ class TrainModel:
             with conn.begin() as trans:
                 conn.execute(text(insert_statement))
 
-        model_name = target_category + '_vec_v' + str(max_id)
+        model_name = target_category + '_classification_vec_v' + str(max_id)
         temp = '''
         insert into fact_sch.vectorization_model_tb (category,version,name)
         values ('{category}',{version},'{name}')

@@ -64,6 +64,11 @@ class ExtractText(ErrorHandler):
         df = pd.DataFrame(rows,columns=['job_run_id','text_id','job_id','title','extract_text'])
         return df
     
+    def __cleanseText(self,engine):
+        # Cleanse text
+        # Attempt to reduce unnesscary text
+        pass
+
     def insertText(self,engine):
         self.extract_text_df.to_sql('current_extract_text_tb',
                                     engine,

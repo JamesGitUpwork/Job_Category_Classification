@@ -46,11 +46,11 @@ def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,cate
     ClassifyText_obj.insertTextPrediction(engine)
     logging.info("Successfully classified text")
     print("Successfully classified text")
-
+    
     # Step 4: Create Job Description
     logging.info("Step 4: Creating job descriptions")
     CreateJobDescription_obj = CreateJobDescription(current_job_run_id,'current')
-    CreateJobDescription_obj.createAndInsertJobDescription(engine)
+    CreateJobDescription_obj.createAndInsertJobDescription(engine)    
     job_description_df = CreateJobDescription_obj.getJobDescription(engine)
     logging.info("Successfully created job descriptions")
     print("Successfully created job descriptions")
