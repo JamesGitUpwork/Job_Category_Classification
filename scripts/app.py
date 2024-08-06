@@ -68,11 +68,11 @@ def predict_job_category(engine,ci_host,text_class_model,text_threshold=0.8,cate
     JobRunControl().updateSuccessJobRunId(engine,current_job_run_id)
     logging.info("Successfully updated job_run_id with success status")
     print("Successfully updated job_run_id with success status")
-
+    
     # Step 7: Copy current job run data to data_sch
-    logging.info("Step 7: Copy current jun run data to data_sch")
+    logging.info("Step 7: Copy current job run data to data_sch")
     SchemaDataManager_obj = SchemaDataManager(current_job_run_id,'data')
-    SchemaDataManager_obj.store_current_job_run_data(engine)
+    #SchemaDataManager_obj.store_current_job_run_data(engine)
     SchemaDataManager_obj.transfer_prediction_for_verification(engine)
     logging.info("Successfully transfer current job run data to data_sch")
     print("Successfully transfer current job run data to data_sch")

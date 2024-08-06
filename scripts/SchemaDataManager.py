@@ -37,13 +37,13 @@ class SchemaDataManager(ErrorHandler):
             from data_sch.job_category_prediction_tb where job_run_id = {};
             ''': ('Job Category Prediction transferred successfully.','Failed to copy job category predictions for verification.')
         }
-        queries = temp.format(self.job_run_id)
 
         with engine.connect() as conn:
             with conn.begin() as trans:
-                for query, (success_message, failure_message) in queries.items():
+                for query, (success_message, failure_message) in temp.items():
+                    transfer_query = query.format(self.job_run_id)
                     try:
-                        conn.execute(text(query))
+                        conn.execute(text(transfer_query))
                     except Exception as e:
                         self.store_current_job_run_data_handle_exception(engine, self.job_run_id, e, failure_message)
 

@@ -28,7 +28,7 @@ df = pd.read_csv(verified_file_path)
 table_name = 'job_category_prediction_verification_tb'
 schema_name = 'data_sch'
 
-# df.to_sql(table_name,engine,if_exists='append',index=False,schema=schema_name)
+df.to_sql(table_name,engine,if_exists='append',index=False,schema=schema_name)
 
 
 # Transform verified data from data_sch and load into sot_sch

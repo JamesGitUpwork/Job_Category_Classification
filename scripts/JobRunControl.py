@@ -62,7 +62,7 @@ class JobRunControl:
         with engine.connect() as con:
             metadata = MetaData()
             my_table = Table('job_run_id_tb', metadata, autoload_with=engine, schema='fact_sch')
-            stmt = update(my_table).where(my_table.c.job_run_id == current_job_run_id).values(status=1)
+            stmt = update(my_table).where(my_table.c.job_run_id == int(current_job_run_id)).values(status=1)
 
             # Execute the update statement
             con.execute(stmt)
