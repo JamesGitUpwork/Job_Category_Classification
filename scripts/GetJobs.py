@@ -14,7 +14,7 @@ class GetJobs(ErrorHandler):
     
     def fetchLatestJobs(self):
         ransack_query = {
-                    "catetgories_ancestry_start": "/1/", 
+                    "categories_ancestry_start": "/1/", 
                     "s": "updated_at desc"  
                     }
         ci_instance = WinthropConfig.create_instance(self.ci_host)
