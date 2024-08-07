@@ -12,16 +12,19 @@ class GetJobs(ErrorHandler):
         self.ci_host = ci_host
         self.latest_job_post_df = None
     
-    def fetchLatestJobs(self):
+    def fetchLatestJobs(self,pages=2):
         ransack_query = {
                     "categories_ancestry_start": "/4/", 
                     "s": "updated_at desc"  
                     }
         ci_instance = WinthropConfig.create_instance(self.ci_host)
-        api_response = ci_instance.get_job_posts(q=ransack_query)
         columns = ['id','title','description_md','created_at']
-        api_response_dict = JobPostCollection.to_dict(api_response)
-        job_post_df = pd.DataFrame(api_response_dict['data'])
+        job_post_df = pd.DataFrame()
+        for i in range(1,pages+1):
+            api_response = ci_instance.get_job_posts(page=i,q=ransack_query)
+            api_response_dict = JobPostCollection.to_dict(api_response)
+            temp = pd.DataFrame(api_response_dict['data'])
+            job_post_df = pd.concat([job_post_df,temp],ignore_index=True)
         temp = job_post_df[columns]
         temp.insert(0,'job_run_id',self.job_run_id)
         temp = temp.rename(columns={'id':'job_id'})
