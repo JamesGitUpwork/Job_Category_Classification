@@ -64,7 +64,7 @@ delete
 delete_query = temp.format(job_run_id)
 with engine.connect() as conn:
     with conn.begin() as trans:
-        conn.execute(text(query))
+        conn.execute(text(delete_query))
 
 temp = '''
 select distinct(category) from data_sch.job_category_prediction_verification_tb where job_run_id = {}
