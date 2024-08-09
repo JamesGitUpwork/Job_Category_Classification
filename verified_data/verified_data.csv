@@ -1,291 +1,297 @@
 job_run_id,predict_id,job_id,description_id,prediction,category,probability,vec_model,category_model,correct_category_prediction,correct_category,correct_description,datetime
-6,86,1968,86,0,Laboratory and Research,6.77E-21,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,138,257257,138,0,Laboratory and Research,1.38E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,97,257261,97,0,Laboratory and Research,0.0316752505,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,62,417539,60,0,Laboratory and Research,0.0001384212434,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,71,442065,68,0,Laboratory and Research,4.33E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,29,460130,29,0,Laboratory and Research,9.75E-10,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,39,257260,36,1,Laboratory and Research,0.9998395494,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,37,471730,34,0,Laboratory and Research,1.18E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,65,477466,76,0,Laboratory and Research,3.60E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,115,482867,115,0,Laboratory and Research,3.45E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,53,500219,51,0,Laboratory and Research,9.43E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,137,511883,137,0,Laboratory and Research,6.43E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,127,518582,127,0,Laboratory and Research,0.0002905794016,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,67,524532,78,0,Laboratory and Research,6.56E-28,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,15,666670,15,1,Laboratory and Research,0.9999620931,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,31,547879,31,0,Laboratory and Research,1.18E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,75,568212,72,0,Laboratory and Research,4.27E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,124,568219,124,0,Laboratory and Research,0.03647487945,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,92,577300,92,0,Laboratory and Research,1.39E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,103,583766,103,0,Laboratory and Research,7.78E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,142,620828,142,0,Laboratory and Research,0.009722809097,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,5,651619,5,0,Laboratory and Research,0.0004010102892,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,41,651706,38,0,Laboratory and Research,0.0001256772674,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,70,657421,67,0,Laboratory and Research,1.59E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,132,666764,132,0,Laboratory and Research,0.003112498793,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,135,712480,135,1,Laboratory and Research,0.6020888143,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,107,680435,107,0,Laboratory and Research,3.18E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,9,680436,8,0,Laboratory and Research,0.0003725086702,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,84,680463,84,0,Laboratory and Research,0.001548380659,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,87,680515,87,0,Laboratory and Research,0.007640796399,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,106,680573,106,0,Laboratory and Research,0.0004728065374,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,129,680575,129,0,Laboratory and Research,0.0001424994648,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,79,687179,79,0,Laboratory and Research,0.004944232659,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,46,692704,46,0,Laboratory and Research,0.0006447406441,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,133,695701,133,0,Laboratory and Research,1.04E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,10,695702,9,0,Laboratory and Research,0.000372382503,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,17,695703,17,0,Laboratory and Research,2.85E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,1,695704,1,0,Laboratory and Research,0.0008916642969,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,50,712481,50,1,Laboratory and Research,0.9597236074,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,125,695705,125,0,Laboratory and Research,0.009537004723,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,8,695706,7,0,Laboratory and Research,4.33E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,105,701522,105,0,Laboratory and Research,8.04E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,58,701588,56,0,Laboratory and Research,0.02725759105,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,108,701589,108,0,Laboratory and Research,0.01124214958,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,73,701637,70,0,Laboratory and Research,2.42E-19,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,104,704258,104,0,Laboratory and Research,3.81E-16,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,45,706940,45,0,Laboratory and Research,0.08694577916,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,89,707018,89,0,Laboratory and Research,0.007393377521,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,23,707027,23,0,Laboratory and Research,0.003800934686,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,77,712494,74,1,Laboratory and Research,0.9999998285,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,26,712500,26,1,Laboratory and Research,0.9999954594,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,85,707030,85,0,Laboratory and Research,0.0006001934784,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,6,707032,6,0,Laboratory and Research,1.64E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,18,707041,18,0,Laboratory and Research,0.01041061412,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,16,707042,16,0,Laboratory and Research,0.0003799612643,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,11,707043,10,0,Laboratory and Research,0.001383145338,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,144,707044,144,0,Laboratory and Research,0.0001124931809,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,56,707046,54,0,Laboratory and Research,0.05296041472,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,110,709929,110,0,Laboratory and Research,1.06E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,19,709932,19,0,Laboratory and Research,0.009174621113,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,114,709940,114,0,Laboratory and Research,0.01177113778,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,112,709946,112,0,Laboratory and Research,0.01195670488,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,99,710336,99,0,Laboratory and Research,0.01666133018,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,40,710466,37,0,Laboratory and Research,7.14E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,60,710467,58,0,Laboratory and Research,8.26E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,57,710688,55,0,Laboratory and Research,0.0104467753,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,122,710795,122,0,Laboratory and Research,0.009982154702,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,119,711016,119,0,Laboratory and Research,0.01021350441,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,51,712512,63,1,Laboratory and Research,0.8663849712,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,117,711343,117,0,Laboratory and Research,0.009795273597,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,64,711770,62,0,Laboratory and Research,0.0007486008197,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,55,711865,53,0,Laboratory and Research,0.009250270616,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,35,712166,44,0,Laboratory and Research,5.81E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,38,712206,35,0,Laboratory and Research,6.86E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,82,712366,82,0,Laboratory and Research,0.01047146277,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,42,712479,39,0,Laboratory and Research,2.57E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,7,712513,12,1,Laboratory and Research,0.9994494121,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,4,712483,4,0,Laboratory and Research,0.01210047006,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,52,712484,64,0,Laboratory and Research,0.003036814803,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,76,712485,73,0,Laboratory and Research,3.88E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,113,712486,113,0,Laboratory and Research,0.004897148601,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,94,712487,94,0,Laboratory and Research,0.003730034629,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,74,712488,71,0,Laboratory and Research,0.009328333757,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,136,712489,136,0,Laboratory and Research,0.0006447406441,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,140,712490,140,0,Laboratory and Research,0.08694577916,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,116,712491,116,0,Laboratory and Research,2.24E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,96,712492,96,0,Laboratory and Research,9.03E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,93,712493,93,0,Laboratory and Research,0.0007962587494,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,102,712495,102,0,Laboratory and Research,0.0004206504489,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,24,712496,24,0,Laboratory and Research,5.58E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,20,712497,20,0,Laboratory and Research,1.72E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,126,712498,126,0,Laboratory and Research,9.92E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,141,712499,141,0,Laboratory and Research,0.0004103068353,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,30,712501,30,0,Laboratory and Research,5.55E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,54,712502,52,0,Laboratory and Research,1.17E-12,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,143,712503,143,0,Laboratory and Research,1.63E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,101,712504,101,0,Laboratory and Research,0.001572468803,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,25,712505,25,0,Laboratory and Research,4.25E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,2,712506,2,0,Laboratory and Research,0.009940680424,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,66,712507,77,0,Laboratory and Research,0.01028572966,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,27,712508,27,0,Laboratory and Research,0.01361465998,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,145,712509,145,0,Laboratory and Research,0.0168799991,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,44,712510,41,0,Laboratory and Research,0.0194792745,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,130,712511,130,0,Laboratory and Research,0.003514033196,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,109,712514,109,0,Laboratory and Research,6.55E-16,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,139,712515,139,0,Laboratory and Research,2.26E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,118,712517,118,0,Laboratory and Research,4.34E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,61,712519,59,0,Laboratory and Research,0.01059691588,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,48,712520,48,0,Laboratory and Research,0.008102599234,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,14,712523,14,0,Laboratory and Research,0.0002826736959,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,22,712524,22,0,Laboratory and Research,6.65E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,128,712528,128,0,Laboratory and Research,3.51E-15,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,34,712529,43,0,Laboratory and Research,3.57E-52,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,49,712530,49,0,Laboratory and Research,0.005391102929,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,98,712531,98,0,Laboratory and Research,0.0002337470675,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,120,712532,120,0,Laboratory and Research,0.0002174854952,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,91,712535,91,0,Laboratory and Research,0.01268731843,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,95,712536,95,0,Laboratory and Research,0.0003259711668,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,47,712540,47,0,Laboratory and Research,3.07E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,90,712541,90,0,Laboratory and Research,1.71E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,28,712542,28,0,Laboratory and Research,0.008222729254,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,21,712543,21,0,Laboratory and Research,0.006707953522,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,131,712545,131,0,Laboratory and Research,2.54E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,32,712546,32,0,Laboratory and Research,4.86E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,3,712548,3,0,Laboratory and Research,0.007309526806,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,80,712549,80,0,Laboratory and Research,5.17E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,121,712550,121,0,Laboratory and Research,1.12E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,88,712551,88,0,Laboratory and Research,0.00260181588,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,13,712552,13,0,Laboratory and Research,0.06855976593,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,63,712553,61,0,Laboratory and Research,0.0004176805753,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,59,712554,57,0,Laboratory and Research,5.46E-11,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,81,712555,81,0,Laboratory and Research,0.0006817147824,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,36,712556,33,0,Laboratory and Research,3.59E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,100,712557,100,0,Laboratory and Research,0.001349879052,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,69,712516,66,1,Laboratory and Research,0.9998445515,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,134,712558,134,0,Laboratory and Research,0.0329868116,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,123,712559,123,0,Laboratory and Research,0.0003829651908,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,43,712560,40,0,Laboratory and Research,8.39E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,111,712561,111,0,Laboratory and Research,7.27E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,68,712562,65,0,Laboratory and Research,4.52E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,12,712563,11,0,Laboratory and Research,0.0004807748357,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,72,712564,69,0,Laboratory and Research,3.74E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,78,712565,75,0,Laboratory and Research,5.58E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,33,712566,42,0,Laboratory and Research,2.37E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,83,712567,83,0,Laboratory and Research,9.87E-10,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,231,1968,86,1,Health and Medical Services,0.9999621807,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,283,257257,138,0,Health and Medical Services,0.005408676006,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,242,257261,97,0,Health and Medical Services,0.09625650976,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,207,417539,60,0,Health and Medical Services,1.51E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,216,442065,68,0,Health and Medical Services,0.0513746345,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,184,257260,36,1,Health and Medical Services,0.9290220247,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,174,460130,29,0,Health and Medical Services,5.70E-10,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,182,471730,34,0,Health and Medical Services,0.007101354661,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,260,482867,115,0,Health and Medical Services,1.66E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,198,500219,51,0,Health and Medical Services,0.008985656266,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,210,477466,76,1,Health and Medical Services,0.6126564061,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,146,695704,1,1,Health and Medical Services,0.9999573487,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,282,511883,137,0,Health and Medical Services,0.0002794581663,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,272,518582,127,0,Health and Medical Services,0.006373543673,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,212,524532,78,0,Health and Medical Services,5.06E-17,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,230,707030,85,1,Health and Medical Services,0.9996714873,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,176,547879,31,0,Health and Medical Services,2.92E-12,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,220,568212,72,0,Health and Medical Services,0.03726758369,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,269,568219,124,0,Health and Medical Services,0.001738251081,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,237,577300,92,0,Health and Medical Services,7.34E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,248,583766,103,0,Health and Medical Services,0.04965308743,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,287,620828,142,0,Health and Medical Services,0.007029476529,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,150,651619,5,0,Health and Medical Services,0.003020450199,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,186,651706,38,0,Health and Medical Services,7.01E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,215,657421,67,0,Health and Medical Services,1.73E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,160,666670,15,0,Health and Medical Services,0.0001624236069,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,277,666764,132,0,Health and Medical Services,0.009573811747,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,252,680435,107,0,Health and Medical Services,0.0001325920025,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,154,680436,8,0,Health and Medical Services,0.0002269378765,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,229,680463,84,0,Health and Medical Services,0.02912822026,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,232,680515,87,0,Health and Medical Services,0.008076210383,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,251,680573,106,0,Health and Medical Services,0.001472679128,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,151,707032,6,1,Health and Medical Services,0.9999999999,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,274,680575,129,0,Health and Medical Services,0.01313384238,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,161,707042,16,1,Health and Medical Services,0.9668798632,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,156,707043,10,1,Health and Medical Services,0.9505843389,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,224,687179,79,0,Health and Medical Services,8.75E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,191,692704,46,0,Health and Medical Services,0.01085911955,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,289,707044,144,1,Health and Medical Services,0.9998409498,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,201,707046,54,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,278,695701,133,0,Health and Medical Services,0.0005780434822,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,155,695702,9,0,Health and Medical Services,0.01059785997,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,185,710466,37,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,162,695703,17,0,Health and Medical Services,0.00151341805,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,270,695705,125,0,Health and Medical Services,0.006957005914,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,153,695706,7,0,Health and Medical Services,0.00774485757,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,250,701522,105,0,Health and Medical Services,2.87E-16,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,203,701588,56,0,Health and Medical Services,0.004927038165,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,253,701589,108,0,Health and Medical Services,0.009581594248,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,218,701637,70,0,Health and Medical Services,7.83E-47,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,249,704258,104,0,Health and Medical Services,6.29E-12,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,190,706940,45,0,Health and Medical Services,0.04307757547,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,234,707018,89,0,Health and Medical Services,0.008245985285,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,168,707027,23,0,Health and Medical Services,0.001623952338,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,163,707041,18,0,Health and Medical Services,0.02180052981,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-08 11:45:58
-6,205,710467,58,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,255,709929,110,0,Health and Medical Services,0.001183129451,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,164,709932,19,0,Health and Medical Services,0.006398815443,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,180,712166,44,1,Health and Medical Services,0.9984168172,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,246,712504,101,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,259,709940,114,0,Health and Medical Services,0.00586681221,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,257,709946,112,0,Health and Medical Services,0.005095997256,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,214,712516,66,1,Health and Medical Services,0.5695870672,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,244,710336,99,0,Health and Medical Services,0.01885962554,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,0,2024-08-08 11:45:58
-6,233,712551,88,1,Health and Medical Services,0.9818251993,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,202,710688,55,0,Health and Medical Services,0.008536443245,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,267,710795,122,0,Health and Medical Services,0.007541335774,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,208,712553,61,1,Health and Medical Services,0.9654562933,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,204,712554,57,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,264,711016,119,0,Health and Medical Services,0.02303421316,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,262,711343,117,0,Health and Medical Services,0.007242661639,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,226,712555,81,1,Health and Medical Services,0.953991322,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,209,711770,62,0,Health and Medical Services,0.0008253166481,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,200,711865,53,0,Health and Medical Services,0.00654288854,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,183,712206,35,0,Health and Medical Services,0.001591238043,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,227,712366,82,0,Health and Medical Services,0.005377244239,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,187,712479,39,0,Health and Medical Services,2.98E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,181,712556,33,1,Health and Medical Services,0.9999999999,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,280,712480,135,0,Health and Medical Services,0.01132198173,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,195,712481,50,0,Health and Medical Services,1.89E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,245,712557,100,1,Health and Medical Services,0.9757961901,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,149,712483,4,0,Health and Medical Services,0.01140453589,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,197,712484,64,0,Health and Medical Services,0.0917494137,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,221,712485,73,0,Health and Medical Services,0.005903507315,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,279,712558,134,1,Health and Medical Services,0.325137083,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,268,712559,123,1,Health and Medical Services,0.9674707788,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,258,712486,113,0,Health and Medical Services,0.006328664326,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,188,712560,40,1,Health and Medical Services,0.9999999999,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,239,712487,94,0,Health and Medical Services,5.29E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,219,712488,71,0,Health and Medical Services,0.004149382565,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,281,712489,136,0,Health and Medical Services,0.01085911955,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,285,712490,140,0,Health and Medical Services,0.04307757547,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,261,712491,116,0,Health and Medical Services,0.01548252679,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,241,712492,96,0,Health and Medical Services,0.001491194835,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,238,712493,93,0,Health and Medical Services,4.29E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,222,712494,74,0,Health and Medical Services,0.001493998431,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,247,712495,102,0,Health and Medical Services,0.002312395376,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,169,712496,24,0,Health and Medical Services,1.43E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,165,712497,20,0,Health and Medical Services,1.80E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,213,712562,65,1,Health and Medical Services,0.9999999784,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,157,712563,11,1,Health and Medical Services,0.9999919028,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,271,712498,126,0,Health and Medical Services,2.76E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,286,712499,141,0,Health and Medical Services,0.006926670743,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,171,712500,26,0,Health and Medical Services,2.33E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,175,712501,30,0,Health and Medical Services,0.000135877993,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,199,712502,52,0,Health and Medical Services,2.88E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,288,712503,143,0,Health and Medical Services,0.0004540825198,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,170,712505,25,0,Health and Medical Services,0.0003301667679,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,147,712506,2,0,Health and Medical Services,0.008654237755,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,211,712507,77,0,Health and Medical Services,0.008676967833,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,172,712508,27,0,Health and Medical Services,0.007730494939,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,290,712509,145,0,Health and Medical Services,0.006469690027,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,189,712510,41,0,Health and Medical Services,0.002363606529,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,275,712511,130,0,Health and Medical Services,0.01393475124,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,196,712512,63,0,Health and Medical Services,0.01202828118,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,152,712513,12,0,Health and Medical Services,0.0001034779339,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,254,712514,109,0,Health and Medical Services,1.02E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,284,712515,139,0,Health and Medical Services,2.67E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,263,712517,118,0,Health and Medical Services,1.95E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,206,712519,59,0,Health and Medical Services,0.0088951811,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,193,712520,48,0,Health and Medical Services,0.01020757722,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,159,712523,14,0,Health and Medical Services,0.001829097908,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,217,712564,69,1,Health and Medical Services,0.9995487794,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,167,712524,22,0,Health and Medical Services,0.0004655557538,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,273,712528,128,0,Health and Medical Services,8.10E-36,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,179,712529,43,0,Health and Medical Services,7.49E-46,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,194,712530,49,0,Health and Medical Services,0.007820565231,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,243,712531,98,0,Health and Medical Services,0.0002583297677,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,265,712532,120,0,Health and Medical Services,0.0005020301016,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,236,712535,91,0,Health and Medical Services,0.01554479775,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,240,712536,95,0,Health and Medical Services,0.001260257712,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,192,712540,47,0,Health and Medical Services,8.66E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,235,712541,90,0,Health and Medical Services,4.90E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,223,712565,75,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,173,712542,28,0,Health and Medical Services,0.007605287416,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,166,712543,21,0,Health and Medical Services,0.007488663676,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,276,712545,131,0,Health and Medical Services,1.19E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,177,712546,32,0,Health and Medical Services,0.002813915608,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,148,712548,3,0,Health and Medical Services,0.001070481793,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,225,712549,80,0,Health and Medical Services,1.21E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,266,712550,121,0,Health and Medical Services,0.001519966101,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,158,712552,13,0,Health and Medical Services,0.009878819652,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,256,712561,111,0,Health and Medical Services,0.0218806811,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,178,712566,42,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
-6,228,712567,83,0,Health and Medical Services,0.001921516376,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-08 11:45:58
+7,31,8095,28,0,Laboratory and Research,9.02E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,179,8095,28,0,Health and Medical Services,4.88E-11,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,70,81136,69,1,Laboratory and Research,1,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,218,81136,69,0,Health and Medical Services,0.0001190268473,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,74,81192,73,1,Laboratory and Research,1,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,222,81192,73,0,Health and Medical Services,2.81E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,54,81366,50,1,Laboratory and Research,1,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,202,81366,50,0,Health and Medical Services,1.47E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,18,81540,16,1,Laboratory and Research,0.9999999998,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,166,81540,16,0,Health and Medical Services,8.31E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,4,139882,4,0,Laboratory and Research,4.87E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,152,139882,4,0,Health and Medical Services,8.54E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,132,177404,132,1,Laboratory and Research,0.9999994069,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,280,177404,132,1,Health and Medical Services,0.8889041357,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,12,178005,11,1,Laboratory and Research,0.9999999998,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,160,178005,11,0,Health and Medical Services,0.02302196066,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,15,183520,14,0,Laboratory and Research,0.003434214751,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,163,183520,14,0,Health and Medical Services,0.004181101495,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,116,202119,114,1,Laboratory and Research,0.9999475908,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,264,202119,114,0,Health and Medical Services,0.005371489716,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,13,228779,12,0,Laboratory and Research,0.01014021317,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,161,228779,12,0,Health and Medical Services,0.007883070901,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,85,273479,84,1,Laboratory and Research,0.999996394,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,233,273479,84,0,Health and Medical Services,0.005985218436,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,30,282175,27,0,Laboratory and Research,0.005547863198,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,178,282175,27,0,Health and Medical Services,0.008345306157,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,65,384111,64,0,Laboratory and Research,0.007890502703,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,213,384111,64,0,Health and Medical Services,0.004292714069,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,32,388914,29,0,Laboratory and Research,2.91E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,180,388914,29,0,Health and Medical Services,0.0004310664488,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,68,414404,67,0,Laboratory and Research,9.65E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,216,414404,67,0,Health and Medical Services,5.49E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,75,426406,74,1,Laboratory and Research,0.9462302786,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,223,426406,74,1,Health and Medical Services,1,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,125,426418,122,0,Laboratory and Research,0.03203792378,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,273,426418,122,1,Health and Medical Services,0.5251993596,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,88,438831,87,0,Laboratory and Research,2.27E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,236,438831,87,0,Health and Medical Services,0.0009727600663,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,33,444916,30,0,Laboratory and Research,6.11E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,181,444916,30,1,Health and Medical Services,0.9999891713,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,9,450993,8,0,Laboratory and Research,4.60E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,157,450993,8,1,Health and Medical Services,0.5448509675,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,44,491561,40,0,Laboratory and Research,1.04E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,192,491561,40,0,Health and Medical Services,1.26E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,79,491563,78,0,Laboratory and Research,3.46E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,227,491563,78,0,Health and Medical Services,1.04E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,24,496755,23,0,Laboratory and Research,2.06E-11,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,172,496755,23,0,Health and Medical Services,5.63E-11,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,64,502879,63,0,Laboratory and Research,0.000158883357,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,212,502879,63,0,Health and Medical Services,0.0001193446737,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,61,502986,60,0,Laboratory and Research,1.26E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,209,502986,60,0,Health and Medical Services,0.00327550177,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,128,512478,125,0,Laboratory and Research,0.00410271051,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,276,512478,125,1,Health and Medical Services,0.9999902652,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,136,516055,136,0,Laboratory and Research,0.009984631695,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,284,516055,136,0,Health and Medical Services,0.02249918341,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,98,538498,97,1,Laboratory and Research,0.9989700067,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,246,538498,97,1,Health and Medical Services,0.9966197516,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,37,538526,33,0,Laboratory and Research,0.02212837604,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,185,538526,33,0,Health and Medical Services,0.03270131913,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,69,547620,68,0,Laboratory and Research,0.0218660416,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,217,547620,68,1,Health and Medical Services,0.9977567516,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,104,565196,103,1,Laboratory and Research,0.9999742288,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,252,565196,103,0,Health and Medical Services,0.00364505512,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,50,565197,46,0,Laboratory and Research,4.70E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,198,565197,46,1,Health and Medical Services,0.9999718493,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,139,565283,139,0,Laboratory and Research,0.06465051858,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,287,565283,139,0,Health and Medical Services,7.95E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,148,580479,148,0,Laboratory and Research,0.0001316151001,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,296,580479,148,0,Health and Medical Services,0.0008607147351,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,118,592444,116,0,Laboratory and Research,0.0001069622178,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,266,592444,116,0,Health and Medical Services,0.05781774204,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,117,593483,115,0,Laboratory and Research,4.25E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,265,593483,115,1,Health and Medical Services,0.9999938689,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,43,608145,39,1,Laboratory and Research,0.999646633,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,191,608145,39,0,Health and Medical Services,0.1084593927,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,100,617734,99,0,Laboratory and Research,0.002676133868,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,248,617734,99,0,Health and Medical Services,0.001431034539,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,27,623472,57,1,Laboratory and Research,0.9999999734,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,175,623472,57,1,Health and Medical Services,0.999661191,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,23,623579,22,0,Laboratory and Research,1.58E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,171,623579,22,0,Health and Medical Services,2.45E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,140,623664,140,0,Laboratory and Research,0.1101308415,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,288,623664,140,0,Health and Medical Services,0.002459269419,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,144,628373,144,1,Laboratory and Research,0.9999999996,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,292,628373,144,1,Health and Medical Services,0.4619462681,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,92,642936,91,1,Laboratory and Research,0.9999999942,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,240,642936,91,0,Health and Medical Services,2.21E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,96,644934,95,0,Laboratory and Research,0.0105127536,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,244,644934,95,0,Health and Medical Services,0.008514980081,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,25,649269,24,0,Laboratory and Research,8.93E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,173,649269,24,0,Health and Medical Services,0.001471811757,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,86,649270,85,0,Laboratory and Research,0.001218810429,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,234,649270,85,0,Health and Medical Services,7.32E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,93,659659,92,0,Laboratory and Research,2.02E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,241,659659,92,1,Health and Medical Services,0.999999618,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,123,665933,120,1,Laboratory and Research,0.99999817,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,271,665933,120,1,Health and Medical Services,0.3871591159,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,58,666027,54,0,Laboratory and Research,1.30E-12,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,206,666027,54,0,Health and Medical Services,1.59E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,3,671771,3,0,Laboratory and Research,0.004257664234,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,151,671771,3,0,Health and Medical Services,0.004330308569,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,147,674441,147,0,Laboratory and Research,1.14E-16,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,295,674441,147,0,Health and Medical Services,1.13E-11,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,120,677257,118,0,Laboratory and Research,3.09E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,268,677257,118,0,Health and Medical Services,9.44E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,73,677270,72,0,Laboratory and Research,0.0003604664733,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,221,677270,72,0,Health and Medical Services,1.70E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,14,677272,13,0,Laboratory and Research,0.000703199029,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,162,677272,13,0,Health and Medical Services,0.001337038644,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,20,677288,18,1,Laboratory and Research,0.9999832292,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,168,677288,18,0,Health and Medical Services,8.21E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,113,677298,129,0,Laboratory and Research,7.74E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,261,677298,129,0,Health and Medical Services,0.0004048742558,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,22,677338,21,1,Laboratory and Research,0.9999999743,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,170,677338,21,0,Health and Medical Services,8.50E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,130,684216,127,0,Laboratory and Research,2.89E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,278,684216,127,0,Health and Medical Services,0.004895775919,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,82,684228,81,0,Laboratory and Research,5.00E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,230,684228,81,0,Health and Medical Services,3.49E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,19,684324,17,0,Laboratory and Research,0.007850137936,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,167,684324,17,1,Health and Medical Services,0.9999799883,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,66,689878,65,0,Laboratory and Research,0.003543823206,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,214,689878,65,0,Health and Medical Services,0.005719303708,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,8,690156,131,0,Laboratory and Research,0.001568480193,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,156,690156,131,1,Health and Medical Services,0.8582706652,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,42,690161,38,0,Laboratory and Research,0.0002887702501,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,190,690161,38,0,Health and Medical Services,2.01E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,101,695634,100,0,Laboratory and Research,0.07435045309,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,249,695634,100,0,Health and Medical Services,0.0006434299882,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,90,698493,89,0,Laboratory and Research,0.009160846147,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,238,698493,89,0,Health and Medical Services,0.005249821806,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,36,698494,32,0,Laboratory and Research,0.01014389289,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,184,698494,32,1,Health and Medical Services,0.9276200091,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,142,698495,142,0,Laboratory and Research,0.004257664234,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,290,698495,142,0,Health and Medical Services,0.004330308569,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,63,698525,62,0,Laboratory and Research,6.75E-17,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,211,698525,62,0,Health and Medical Services,4.15E-15,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,109,698527,108,0,Laboratory and Research,5.34E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,257,698527,108,0,Health and Medical Services,0.0004180847567,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,29,704132,26,0,Laboratory and Research,1.72E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,177,704132,26,0,Health and Medical Services,0.003474511761,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,103,704421,102,0,Laboratory and Research,3.73E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,251,704421,102,0,Health and Medical Services,4.36E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,105,704422,104,0,Laboratory and Research,1.68E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,253,704422,104,0,Health and Medical Services,7.17E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,143,704424,143,1,Laboratory and Research,0.7252205137,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,291,704424,143,0,Health and Medical Services,0.0002628334272,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,35,704547,58,0,Laboratory and Research,5.36E-15,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,183,704547,58,0,Health and Medical Services,1.01E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,6,709789,6,0,Laboratory and Research,0.0004516393321,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,154,709789,6,1,Health and Medical Services,0.9999976046,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,145,709809,145,0,Laboratory and Research,0.004250823052,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,293,709809,145,0,Health and Medical Services,0.008143603555,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,72,710011,71,0,Laboratory and Research,0.006520732505,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,220,710011,71,0,Health and Medical Services,0.007587918774,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,10,711193,9,0,Laboratory and Research,0.009912742685,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,158,711193,9,0,Health and Medical Services,0.006259834816,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,121,715145,119,0,Laboratory and Research,0.00941389796,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,269,715145,119,0,Health and Medical Services,0.008243831095,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,11,715149,10,0,Laboratory and Research,2.19E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,159,715149,10,1,Health and Medical Services,0.6033925718,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,26,715150,56,0,Laboratory and Research,0.02361506007,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,174,715150,56,0,Health and Medical Services,0.0002920470765,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,115,715151,113,0,Laboratory and Research,3.88E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,263,715151,113,0,Health and Medical Services,0.00247000835,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,52,715153,48,0,Laboratory and Research,0.0001295490474,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,200,715153,48,0,Health and Medical Services,0.004559101679,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,133,715154,133,0,Laboratory and Research,0.004820810215,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,281,715154,133,0,Health and Medical Services,0.008400943028,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,127,715155,124,0,Laboratory and Research,0.006087041985,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,275,715155,124,0,Health and Medical Services,0.008018151374,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,119,715156,117,0,Laboratory and Research,0.00477968568,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,267,715156,117,0,Health and Medical Services,0.005473054938,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,94,715157,93,0,Laboratory and Research,0.005072641363,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,242,715157,93,0,Health and Medical Services,0.006248224353,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,106,715158,105,0,Laboratory and Research,1.88E-16,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,254,715158,105,0,Health and Medical Services,2.31E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,89,715159,88,0,Laboratory and Research,1.86E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,237,715159,88,0,Health and Medical Services,0.0004844761488,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,107,715160,106,0,Laboratory and Research,1.84E-12,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,255,715160,106,0,Health and Medical Services,1.48E-11,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,80,715161,79,0,Laboratory and Research,8.05E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,228,715161,79,0,Health and Medical Services,0.001380837124,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,114,715162,112,0,Laboratory and Research,0.005653651819,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,262,715162,112,0,Health and Medical Services,6.88E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,76,715163,75,1,Laboratory and Research,1,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,224,715163,75,0,Health and Medical Services,1.45E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,60,715164,59,0,Laboratory and Research,1.09E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,208,715164,59,0,Health and Medical Services,0.002790384807,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,1,715166,1,1,Laboratory and Research,0.4254742301,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,149,715166,1,0,Health and Medical Services,0.0007653974558,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,62,715167,61,0,Laboratory and Research,1.46E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,210,715167,61,0,Health and Medical Services,4.26E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,40,715168,36,0,Laboratory and Research,7.53E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,188,715168,36,0,Health and Medical Services,0.00692353434,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,53,715169,49,0,Laboratory and Research,1.87E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,201,715169,49,0,Health and Medical Services,2.03E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,135,715170,135,0,Laboratory and Research,1.46E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,283,715170,135,0,Health and Medical Services,4.26E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,28,715171,25,0,Laboratory and Research,7.53E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,176,715171,25,0,Health and Medical Services,0.00692353434,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,134,715172,134,0,Laboratory and Research,5.89E-14,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,282,715172,134,0,Health and Medical Services,5.19E-13,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,5,715173,5,0,Laboratory and Research,2.16E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,153,715173,5,0,Health and Medical Services,4.43E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,141,715174,141,0,Laboratory and Research,8.69E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,289,715174,141,0,Health and Medical Services,2.37E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,67,715176,66,0,Laboratory and Research,0.008809840694,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,215,715176,66,0,Health and Medical Services,0.01006571487,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,124,715177,121,0,Laboratory and Research,0.01312519845,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,272,715177,121,0,Health and Medical Services,0.007068913552,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,84,715178,83,0,Laboratory and Research,0.009081129613,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,232,715178,83,0,Health and Medical Services,0.01054658172,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,56,715179,52,0,Laboratory and Research,0.009025790012,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,204,715179,52,0,Health and Medical Services,0.01117726764,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,95,715180,94,0,Laboratory and Research,3.41E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,243,715180,94,0,Health and Medical Services,0.001126156066,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,71,715181,70,0,Laboratory and Research,1.59E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,219,715181,70,0,Health and Medical Services,6.41E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,17,715182,15,0,Laboratory and Research,6.17E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,165,715182,15,0,Health and Medical Services,5.66E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,87,715183,86,0,Laboratory and Research,1.81E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,235,715183,86,0,Health and Medical Services,4.01E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,77,715184,76,0,Laboratory and Research,0.003508281011,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,225,715184,76,0,Health and Medical Services,0.02591464826,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,99,715185,98,0,Laboratory and Research,1.83E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,247,715185,98,0,Health and Medical Services,0.00762447647,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,38,715186,34,0,Laboratory and Research,5.34E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,186,715186,34,0,Health and Medical Services,0.0004180847567,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,122,715187,130,0,Laboratory and Research,0.0347598848,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,270,715187,130,0,Health and Medical Services,0.01591754577,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,41,715188,37,0,Laboratory and Research,4.59E-11,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,189,715188,37,0,Health and Medical Services,0.0001194073576,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,97,715189,96,0,Laboratory and Research,1.53E-10,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,245,715189,96,0,Health and Medical Services,2.78E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,46,715190,42,0,Laboratory and Research,1.21E-18,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,194,715190,42,0,Health and Medical Services,6.69E-12,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,2,715192,2,0,Laboratory and Research,0.008149113263,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,150,715192,2,0,Health and Medical Services,0.005359900187,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,21,715194,20,0,Laboratory and Research,0.004250823052,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,169,715194,20,0,Health and Medical Services,0.008143603555,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,78,715195,77,0,Laboratory and Research,0.1034596617,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,226,715195,77,0,Health and Medical Services,0.06834286336,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,51,715196,47,0,Laboratory and Research,6.52E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,199,715196,47,0,Health and Medical Services,0.1184914103,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,45,715197,41,0,Laboratory and Research,0.07435045309,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,193,715197,41,0,Health and Medical Services,0.0006434299882,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,57,715198,53,0,Laboratory and Research,0.009160846147,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,205,715198,53,0,Health and Medical Services,0.005249821806,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,137,715199,137,0,Laboratory and Research,0.0002887702501,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,285,715199,137,0,Health and Medical Services,2.01E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,47,715200,43,0,Laboratory and Research,0.0003604664733,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,195,715200,43,0,Health and Medical Services,1.70E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,126,715201,123,0,Laboratory and Research,0.000703199029,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,274,715201,123,0,Health and Medical Services,0.001337038644,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,110,715202,109,0,Laboratory and Research,0.004257664234,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,258,715202,109,0,Health and Medical Services,0.004330308569,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,16,715203,19,0,Laboratory and Research,0.01014389289,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,164,715203,19,1,Health and Medical Services,0.9276200091,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,34,715204,31,0,Laboratory and Research,0.004257664234,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,182,715204,31,0,Health and Medical Services,0.004330308569,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,39,715205,35,0,Laboratory and Research,7.16E-11,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,187,715205,35,0,Health and Medical Services,9.50E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,129,715206,126,0,Laboratory and Research,1.43E-16,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,277,715206,126,0,Health and Medical Services,1.15E-21,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,48,715207,44,0,Laboratory and Research,5.28E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,196,715207,44,0,Health and Medical Services,7.05E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,91,715208,90,0,Laboratory and Research,4.85E-06,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,239,715208,90,0,Health and Medical Services,3.93E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,49,715209,45,1,Laboratory and Research,0.9999999992,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,197,715209,45,0,Health and Medical Services,3.86E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,131,715210,128,1,Laboratory and Research,0.9999999941,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,279,715210,128,0,Health and Medical Services,9.29E-09,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,102,715211,101,1,Laboratory and Research,0.9999999414,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,250,715211,101,0,Health and Medical Services,1.18E-08,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,55,715212,51,1,Laboratory and Research,1,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,203,715212,51,0,Health and Medical Services,1.43E-20,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,112,715213,111,1,Laboratory and Research,0.9999299208,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,260,715213,111,0,Health and Medical Services,0.001781075077,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,81,715214,80,0,Laboratory and Research,3.07E-08,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,229,715214,80,0,Health and Medical Services,3.40E-06,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,7,715215,7,0,Laboratory and Research,4.16E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,155,715215,7,0,Health and Medical Services,1.93E-07,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,146,715216,146,0,Laboratory and Research,4.25E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,294,715216,146,0,Health and Medical Services,5.94E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,111,715217,110,1,Laboratory and Research,0.9999299208,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,259,715217,110,0,Health and Medical Services,0.001781075077,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,83,715218,82,0,Laboratory and Research,2.00E-09,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,231,715218,82,0,Health and Medical Services,2.82E-05,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,59,715219,55,0,Laboratory and Research,6.22E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,207,715219,55,0,Health and Medical Services,0.008984159602,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,0,NULL,NULL,2024-08-09 10:52:11
+7,138,715220,138,0,Laboratory and Research,1.63E-07,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,286,715220,138,0,Health and Medical Services,0.008466571109,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,108,715221,107,0,Laboratory and Research,2.38E-05,Laboratory and Research_classification_vec_v3,Laboratory and Research_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
+7,256,715221,107,0,Health and Medical Services,2.33E-11,Health and Medical Services_classification_vec_v3,Health and Medical Services_classification_model_v3,1,NULL,NULL,2024-08-09 10:52:11
